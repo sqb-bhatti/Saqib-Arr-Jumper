@@ -1,25 +1,27 @@
 #include "../../header/Level/LevelController.h"
 #include "../../header/Level/LevelView.h"
+#include "../../header/Main/GameService.h"
 
 namespace Level
 {
-	Level::LevelController::LevelController()
+
+	LevelController::LevelController()
 	{
 		level_view = new LevelView();
 	}
 
-	Level::LevelController::~LevelController() {}
+	LevelController::~LevelController() {}
 
-	void Level::LevelController::initialize()
+	void LevelController::initialize()
 	{
 		level_view->initialize();
 	}
 
-	void Level::LevelController::update()
+	void LevelController::update()
 	{
 	}
 
-	void Level::LevelController::render()
+	void LevelController::render()
 	{
 		level_view->render();
 	}
