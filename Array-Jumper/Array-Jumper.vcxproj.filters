@@ -39,6 +39,10 @@
     <ClCompile Include="source\Global\ServiceLocator.cpp" />
     <ClCompile Include="source\UI\Instructions\InstructionsUIController.cpp" />
     <ClCompile Include="source\Global\Config.cpp" />
+    <ClCompile Include="source\Player\PlayerService.cpp" />
+    <ClCompile Include="source\Player\PlayerController.cpp" />
+    <ClCompile Include="source\Player\PlayerView.cpp" />
+    <ClCompile Include="source\Player\PlayerModel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\Main\GameService.h">
@@ -64,6 +68,10 @@
     <ClInclude Include="header\UI\Instructions\InstructionsUIController.h" />
     <ClInclude Include="header\Global\ServiceLocator.h" />
     <ClInclude Include="header\Global\Config.h" />
+    <ClInclude Include="header\Player\PlayerModel.h" />
+    <ClInclude Include="header\Player\PlayerView.h" />
+    <ClInclude Include="header\Player\PlayerController.h" />
+    <ClInclude Include="header\Player\PlayerService.h" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="assets\sounds\background_music.mp3" />
