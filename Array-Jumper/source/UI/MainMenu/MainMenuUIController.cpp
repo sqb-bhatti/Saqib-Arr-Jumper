@@ -109,7 +109,6 @@ namespace UI
 
             if (clickedButton(&play_button_sprite, mouse_position))
             {
-                printf("Clicked Play Button \n");
                 GameService::setGameState(GameState::GAMEPLAY);
                 ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::BUTTON_CLICK);
             }

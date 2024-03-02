@@ -43,6 +43,9 @@
     <ClCompile Include="source\Player\PlayerController.cpp" />
     <ClCompile Include="source\Player\PlayerView.cpp" />
     <ClCompile Include="source\Player\PlayerModel.cpp" />
+    <ClCompile Include="source\Level\LevelView.cpp" />
+    <ClCompile Include="source\Level\LevelController.cpp" />
+    <ClCompile Include="source\Level\LevelService.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\Main\GameService.h">
@@ -72,6 +75,9 @@
     <ClInclude Include="header\Player\PlayerView.h" />
     <ClInclude Include="header\Player\PlayerController.h" />
     <ClInclude Include="header\Player\PlayerService.h" />
+    <ClInclude Include="header\Level\LevelView.h" />
+    <ClInclude Include="header\Level\LevelController.h" />
+    <ClInclude Include="header\Level\LevelService.h" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="assets\sounds\background_music.mp3" />
