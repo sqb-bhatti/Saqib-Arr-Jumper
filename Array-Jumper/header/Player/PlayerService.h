@@ -1,9 +1,7 @@
 #pragma once
-#include "../../header/Player/PlayerController.h"
 
 namespace Player
 {
-	//class PlayerService
 	class PlayerController;
 	class PlayerService
 	{
