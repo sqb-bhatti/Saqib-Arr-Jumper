@@ -1,5 +1,7 @@
 #pragma once
-#include <SFML/Graphics.hpp>
+#include "../../header/Level/LevelData.h"
+#include "../../header/UI/UIElement/ImageView.h"
+
 
 namespace Player
 {
@@ -11,14 +13,14 @@ namespace Player
 
 		PlayerController* player_controller;
 
-		sf::Sprite player_sprite;
-		sf::Texture player_texture;
+		UI::UIElement::ImageView* player_image;
 
+		float player_height;
+		Level::BoxDimentions current_box_dimentions;
 
-		bool loadTexturesFromFile();
-		void setPlayerSprite();
-
+		void initializePlayerImage();
 		void drawPlayer();
+		void loadPlayer();
 
 	public:
 		PlayerView(PlayerController* controller);
@@ -27,6 +29,7 @@ namespace Player
 		void initialize();
 		void update();
 		void render();
+
 	};	
 }		
 

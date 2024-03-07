@@ -3,6 +3,7 @@
 namespace Level
 {
 	class LevelController;
+	struct BoxDimentions;
 	class LevelService
 	{
 	private:
@@ -15,6 +16,8 @@ namespace Level
 		void intialize();
 		void update();
 		void render();
+
+		BoxDimentions getBoxDimentions();
 	};
 }
 

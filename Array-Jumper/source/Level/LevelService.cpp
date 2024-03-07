@@ -24,4 +24,9 @@ namespace Level
 	{
 		level_controller->render();
 	}
+
+	BoxDimentions LevelService::getBoxDimentions()
+	{
+		return level_controller->getBoxDimentions();
+	}
 }

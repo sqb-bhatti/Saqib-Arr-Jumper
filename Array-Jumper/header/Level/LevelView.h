@@ -1,5 +1,4 @@
 #pragma once
-#include <SFML/Graphics.hpp>
 #include "LevelData.h"
 #include "../../header/UI/UIElement/ImageView.h"
 
@@ -9,14 +8,9 @@ namespace Level
 	{
 	private:
 		
-		const float bottom_offset = 200.f;
-		const float box_spacing_percentage = 0.3f;
 		const float background_alpha = 110.f;
 
-		float box_width;
-		float box_height;
-		float box_spacing;
-
+		BoxDimentions box_dimentions;
 
 		sf::RenderWindow* game_window;
 
@@ -42,6 +36,9 @@ namespace Level
 		void initialize();
 		void update();
 		void render();
+
+		BoxDimentions getBoxDimentions();
+		
 	};
 }
 

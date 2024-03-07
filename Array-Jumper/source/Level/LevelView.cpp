@@ -2,7 +2,6 @@
 #include "../../header/Level/LevelData.h"
 #include "../../header/Global/ServiceLocator.h"
 #include "../../header/Global/Config.h"
-#include <iostream>
 
 namespace Level
 {
@@ -34,6 +33,11 @@ namespace Level
 		drawLevel();
 	}
 
+	BoxDimentions LevelView::getBoxDimentions()
+	{
+		return box_dimentions;
+	}
+
 	void LevelView::createImages()
 	{
 		background_image = new ImageView();
@@ -51,12 +55,13 @@ namespace Level
 		background_image->initialize(Config::array_jumper_bg_texture_path, game_window->getSize().x, game_window->getSize().y, sf::Vector2f(0, 0));
 		background_image->setImageAlpha(background_alpha);
 
-		box_image->initialize(Config::box_texture_path, box_width, box_height, sf::Vector2f(0, 0));
-		letter_one_image->initialize(Config::letter_one_texture_path, box_width, box_height, sf::Vector2f(0, 0));
-		letter_two_image->initialize(Config::letter_two_texture_path, box_width, box_height, sf::Vector2f(0, 0));
-		letter_three_image->initialize(Config::letter_three_texture_path, box_width, box_height, sf::Vector2f(0, 0));
-		obstacle_one_image->initialize(Config::obstacle_01_texture_path, box_width, box_height, sf::Vector2f(0, 0));
-		obstacle_two_image->initialize(Config::obstacle_02_texture_path, box_width, box_height, sf::Vector2f(0, 0));
+		
+		box_image->initialize(Config::box_texture_path, box_dimentions.box_width, box_dimentions.box_height, sf::Vector2f(0, 0));
+		letter_one_image->initialize(Config::letter_one_texture_path, box_dimentions.box_width, box_dimentions.box_height, sf::Vector2f(0, 0));
+		letter_two_image->initialize(Config::letter_two_texture_path, box_dimentions.box_width, box_dimentions.box_height, sf::Vector2f(0, 0));
+		letter_three_image->initialize(Config::letter_three_texture_path, box_dimentions.box_width, box_dimentions.box_height, sf::Vector2f(0, 0));
+		obstacle_one_image->initialize(Config::obstacle_01_texture_path, box_dimentions.box_width, box_dimentions.box_height, sf::Vector2f(0, 0));
+		obstacle_two_image->initialize(Config::obstacle_02_texture_path, box_dimentions.box_width, box_dimentions.box_height, sf::Vector2f(0, 0));
 	}
 
 	void LevelView::updateImages()
@@ -75,15 +80,15 @@ namespace Level
 	{
 		background_image->render();
 
-		for (int i = 0; i < LevelData::NUMBER_OF_BLOCKS; ++i)
+		for (int i = 0; i < LevelData::NUMBER_OF_BOXES; ++i)
 		{
-			float xPosition = box_spacing + static_cast<float>(i) * (box_width + box_spacing);
-			float yPosition = static_cast<float>(game_window->getSize().y) - box_height - bottom_offset;
+			float xPosition = box_dimentions.box_spacing + static_cast<float>(i) * (box_dimentions.box_width + box_dimentions.box_spacing);
+			float yPosition = static_cast<float>(game_window->getSize().y) - box_dimentions.box_height - box_dimentions.bottom_offset;
 			
 			box_image->setPosition(sf::Vector2f(xPosition, yPosition));
 			box_image->render();
 
-			switch (current_level_data.level_blocks[i])
+			switch (current_level_data.level_boxes[i])
 			{
 			case BlockType::OBSTACLE_ONE:
 				obstacle_one_image->setPosition(sf::Vector2f(xPosition, yPosition));
@@ -111,7 +116,7 @@ namespace Level
 				break;
 
 			case BlockType::TARGET:
-				sf::RectangleShape overlay(sf::Vector2f(box_width, box_height));
+				sf::RectangleShape overlay(sf::Vector2f(box_dimentions.box_width, box_dimentions.box_height));
 				overlay.setPosition(xPosition, yPosition);
 				overlay.setFillColor(sf::Color(0, 191, 255, 90));
 				game_window->draw(overlay);
@@ -126,14 +131,16 @@ namespace Level
 		if (game_window)
 		{
 			float screenWidth = static_cast<float>(game_window->getSize().x);
-			int numBoxes = LevelData::NUMBER_OF_BLOCKS;
+			int numBoxes = LevelData::NUMBER_OF_BOXES;
 
-			float totalBoxes = (numBoxes + box_spacing_percentage * static_cast<float>(numBoxes + 1));
+			float totalBoxes = (numBoxes + box_dimentions.box_spacing_percentage * static_cast<float>(numBoxes + 1));
 
-			box_width = screenWidth / totalBoxes;
-			box_spacing = box_spacing_percentage * box_width;
+			box_dimentions.box_width = screenWidth / totalBoxes;
+			box_dimentions.box_spacing = box_dimentions.box_spacing_percentage * box_dimentions.box_width;
 
-			box_height = box_width;
+			box_dimentions.box_height = box_dimentions.box_width;
 		}
 	}
+
+
 }

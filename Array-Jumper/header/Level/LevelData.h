@@ -18,10 +18,20 @@ namespace Level
         THREE = 3,
     };
 
+    struct BoxDimentions
+    {
+        float box_width;
+        float box_height;
+        float box_spacing;
+
+        float box_spacing_percentage = 0.3f;
+        float bottom_offset = 200.f;
+    };
+
     struct LevelData
     {
-        static const int NUMBER_OF_BLOCKS = 10;
+        static const int NUMBER_OF_BOXES = 10;
 
-        int level_blocks[NUMBER_OF_BLOCKS] = { ONE, TWO, OBSTACLE_ONE, TWO, THREE, ONE, OBSTACLE_TWO, TWO, ONE, TARGET };
+        int level_boxes[NUMBER_OF_BOXES] = { ONE, TWO, OBSTACLE_ONE, TWO, THREE, ONE, OBSTACLE_TWO, TWO, ONE, TARGET };
     };
 }
