@@ -21,11 +21,18 @@ namespace Level
 		sf::RenderWindow* game_window;
 
 		UI::UIElement::ImageView* background_image;
+		UI::UIElement::ImageView* box_image;
+		UI::UIElement::ImageView* letter_one_image;
+		UI::UIElement::ImageView* letter_two_image;
+		UI::UIElement::ImageView* letter_three_image;
+		UI::UIElement::ImageView* obstacle_one_image;
+		UI::UIElement::ImageView* obstacle_two_image;
 
 		LevelData current_level_data;
 
 		void createImages();
-		void initializeBackgroundImage();
+		void updateImages();
+		void initializeImages();
 		void drawLevel();
 
 		void calculateBoxExtents();
