@@ -5,19 +5,24 @@
 namespace Level
 {
 	using namespace Global;
+	using namespace UI::UIElement;
 
 	LevelView::LevelView()
 	{
 		game_window = nullptr;
+
+		createImages();
 	}
 
 	void LevelView::initialize()
 	{
 		game_window = ServiceLocator::getInstance()->getGraphicService()->getGameWindow();
-		if (loadTexturesFromFile())
-		{
-			setBackgroundImage();
-		}
+		initializeBackgroundImage();
+	}
+
+	void LevelView::update()
+	{
+		background_image->update();
 	}
 
 	void LevelView::render()
@@ -25,32 +30,36 @@ namespace Level
 		drawLevel();
 	}
 
-	bool LevelView::loadTexturesFromFile()
+	void LevelView::createImages()
 	{
-		return background_texture.loadFromFile(Config::array_jumper_bg_texture_path);
+		background_image = new ImageView();
 	}
 
-	void LevelView::setBackgroundImage()
+	void LevelView::initializeBackgroundImage()
 	{
-		setBackgroundSprite();
-		scaleBackgroundImage();
+		background_image->initialize(Config::array_jumper_bg_texture_path, game_window->getSize().x, game_window->getSize().y, sf::Vector2f(0, 0));
+		background_image->setImageAlpha(background_alpha);
 	}
-	void LevelView::setBackgroundSprite()
-	{
-		background_sprite.setTexture(background_texture);
-		sf::Color color = background_sprite.getColor();
-		color.a = background_alpha;
-		background_sprite.setColor(color);
-	}
-	void LevelView::scaleBackgroundImage()
-	{
-		background_sprite.setScale(
-			static_cast<float>(game_window->getSize().x) / background_sprite.getTexture()->getSize().x,
-			static_cast<float>(game_window->getSize().y) / background_sprite.getTexture()->getSize().y
-		);
-	}
+	
+	
 	void LevelView::drawLevel()
 	{
-		game_window->draw(background_sprite);
+		background_image->render();
+	}
+
+	void LevelView::calculateBoxExtents()
+	{
+		if (game_window)
+		{
+			float screenWidth = static_cast<float>(game_window->getSize().x);
+			int numBoxes = LevelData::NUMBER_OF_BLOCKS;
+
+			float totalBoxes = (numBoxes + box_spacing_percentage * static_cast<float>(numBoxes + 1));
+
+			box_width = screenWidth / totalBoxes;
+			box_spacing = box_spacing_percentage * box_width;
+
+			box_height = box_width;
+		}
 	}
 }

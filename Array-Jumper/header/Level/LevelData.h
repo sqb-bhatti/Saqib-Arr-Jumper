@@ -21,10 +21,7 @@ namespace Level
     struct LevelData
     {
         static const int NUMBER_OF_BLOCKS = 10;
-        static const int NUMBER_OF_LEVELS = 3;
 
-        int level1[NUMBER_OF_BLOCKS] = { ONE, TWO, OBSTACLE_ONE, TWO, THREE, ONE, OBSTACLE_TWO, TWO, ONE, TARGET };
-        int level2[NUMBER_OF_BLOCKS] = { ONE, TWO, OBSTACLE_TWO, ONE, TWO, OBSTACLE_ONE, THREE, OBSTACLE_ONE, ONE, TARGET };
-        int level3[NUMBER_OF_BLOCKS] = { ONE, THREE, OBSTACLE_ONE, OBSTACLE_TWO, ONE, TWO, OBSTACLE_ONE, TWO, ONE, TARGET };
+        int level_blocks[NUMBER_OF_BLOCKS] = { ONE, TWO, OBSTACLE_ONE, TWO, THREE, ONE, OBSTACLE_TWO, TWO, ONE, TARGET };
     };
 }
