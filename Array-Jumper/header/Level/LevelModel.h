@@ -22,6 +22,7 @@ namespace Level
 		
 	public:
 		LevelData getCurrentLevelData();
+		int getCurrentBoxValue(int currentPosition);
 	};
 }
 
