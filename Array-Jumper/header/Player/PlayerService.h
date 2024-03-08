@@ -18,6 +18,7 @@ namespace Player
 		void update();
 		void render();
 
+		int getCurrentLives();
 		void takeDamage();
 		void levelComplete();
 	};

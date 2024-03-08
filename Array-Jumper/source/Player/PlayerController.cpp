@@ -58,6 +58,11 @@ namespace Player
 		return player_model->getCurrentPosition();
 	}
 
+	int PlayerController::getCurrentLives()
+	{
+		return player_model->getCurrentLives();
+	}
+
 	void PlayerController::takeDamage()
 	{
 		player_model->decreamentLife();

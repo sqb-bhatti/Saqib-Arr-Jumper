@@ -42,6 +42,7 @@ namespace Player
 		void setPlayerState(PlayerState new_player_state);
 
 		int getCurrentPosition();
+		int getCurrentLives();
 
 		void resetPlayer();
 		void takeDamage();
