@@ -3,6 +3,13 @@
 
 namespace Player
 {
+
+	enum MovementDirection
+	{
+		FORWARD,
+		BACKWARD
+	};
+
 	class PlayerView;
 	class PlayerModel;
 	enum class PlayerState;
@@ -19,10 +26,11 @@ namespace Player
 		void resetPlayer();
 
 		void readInput();
-		void moveForward();
+		void move(MovementDirection direction);
 		void moveBackward();
-		void jumpForward();
+		void jump(MovementDirection direction);
 		void jumpBackward();
+		bool isPositionInBound(int targetPosition);
 
 	public:
 		PlayerController();
@@ -36,5 +44,7 @@ namespace Player
 		void setPlayerState(PlayerState new_player_state);
 
 		int getCurrentPosition();
+
+		void takeDamage();
 	};
 }
