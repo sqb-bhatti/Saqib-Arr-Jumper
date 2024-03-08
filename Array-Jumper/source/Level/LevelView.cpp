@@ -1,4 +1,5 @@
 #include "../../header/Level/LevelView.h"
+#include "../../header/Level/LevelModel.h"
 #include "../../header/Level/LevelData.h"
 #include "../../header/Global/ServiceLocator.h"
 #include "../../header/Global/Config.h"
@@ -25,7 +26,7 @@ namespace Level
 
 	void LevelView::update()
 	{
-		background_image->update();
+		updateImages();
 	}
 
 	void LevelView::render()
@@ -43,11 +44,12 @@ namespace Level
 		background_image = new ImageView();
 
 		box_image = new ImageView();
-		letter_one_image = new ImageView();
-		letter_two_image = new ImageView();
-		letter_three_image = new ImageView();
-		obstacle_one_image = new ImageView();
-		obstacle_two_image = new ImageView();
+		target_overlay_image = new ImageView();
+		letter_one_overlay_image = new ImageView();
+		letter_two_overlay_image = new ImageView();
+		letter_three_overlay_image = new ImageView();
+		obstacle_one_overlay_image = new ImageView();
+		obstacle_two_overlay_image = new ImageView();
 	}
 
 	void LevelView::initializeImages()
@@ -57,11 +59,12 @@ namespace Level
 
 		
 		box_image->initialize(Config::box_texture_path, box_dimentions.box_width, box_dimentions.box_height, sf::Vector2f(0, 0));
-		letter_one_image->initialize(Config::letter_one_texture_path, box_dimentions.box_width, box_dimentions.box_height, sf::Vector2f(0, 0));
-		letter_two_image->initialize(Config::letter_two_texture_path, box_dimentions.box_width, box_dimentions.box_height, sf::Vector2f(0, 0));
-		letter_three_image->initialize(Config::letter_three_texture_path, box_dimentions.box_width, box_dimentions.box_height, sf::Vector2f(0, 0));
-		obstacle_one_image->initialize(Config::obstacle_01_texture_path, box_dimentions.box_width, box_dimentions.box_height, sf::Vector2f(0, 0));
-		obstacle_two_image->initialize(Config::obstacle_02_texture_path, box_dimentions.box_width, box_dimentions.box_height, sf::Vector2f(0, 0));
+		target_overlay_image->initialize(Config::target_texture_path, box_dimentions.box_width, box_dimentions.box_height, sf::Vector2f(0, 0));
+		letter_one_overlay_image->initialize(Config::letter_one_texture_path, box_dimentions.box_width, box_dimentions.box_height, sf::Vector2f(0, 0));
+		letter_two_overlay_image->initialize(Config::letter_two_texture_path, box_dimentions.box_width, box_dimentions.box_height, sf::Vector2f(0, 0));
+		letter_three_overlay_image->initialize(Config::letter_three_texture_path, box_dimentions.box_width, box_dimentions.box_height, sf::Vector2f(0, 0));
+		obstacle_one_overlay_image->initialize(Config::obstacle_01_texture_path, box_dimentions.box_width, box_dimentions.box_height, sf::Vector2f(0, 0));
+		obstacle_two_overlay_image->initialize(Config::obstacle_02_texture_path, box_dimentions.box_width, box_dimentions.box_height, sf::Vector2f(0, 0));
 	}
 
 	void LevelView::updateImages()
@@ -69,11 +72,12 @@ namespace Level
 		background_image->update();
 
 		box_image->update();
-		letter_one_image->update();
-		letter_two_image->update();
-		letter_three_image->update();
-		obstacle_one_image->update();
-		obstacle_two_image->update();
+		target_overlay_image->update();
+		letter_one_overlay_image->update();
+		letter_two_overlay_image->update();
+		letter_three_overlay_image->update();
+		obstacle_one_overlay_image->update();
+		obstacle_two_overlay_image->update();
 	}
 	
 	void LevelView::drawLevel()
@@ -82,76 +86,81 @@ namespace Level
 
 		for (int i = 0; i < LevelData::NUMBER_OF_BOXES; ++i)
 		{
-			// CalculateBoxPosition();
+			sf::Vector2f position = calculateBoxPosition(i);
 
-			/*float xPosition = box_dimentions.box_spacing + static_cast<float>(i) * (box_dimentions.box_width + box_dimentions.box_spacing);
-			float yPosition = static_cast<float>(game_window->getSize().y) - box_dimentions.box_height - box_dimentions.bottom_offset;
-			
-			initializeBoxBacground();
-			
-			box_image->setPosition(sf::Vector2f(xPosition, yPosition));
-			box_image->render();*/
+			box_image->setPosition(position);
+			box_image->render();
 
-			switch (current_level_data.level_boxes[i])
-			{
-				ImageView image;
-
-
-			case BlockType::OBSTACLE_ONE:
-				image = obstacle_one_image;
-				/*obstacle_one_image->setPosition(sf::Vector2f(xPosition, yPosition));
-				obstacle_one_image->render();*/
-				break;
-
-			case BlockType::OBSTACLE_TWO:
-				obstacle_two_image->setPosition(sf::Vector2f(xPosition, yPosition));
-				obstacle_two_image->render();
-				break;
-
-			case BlockType::ONE:
-				letter_one_image->setPosition(sf::Vector2f(xPosition, yPosition));
-				letter_one_image->render();
-				break;
-
-			case BlockType::TWO:
-				letter_two_image->setPosition(sf::Vector2f(xPosition, yPosition));
-				letter_two_image->render();
-				break;
-
-			case BlockType::THREE:
-				letter_three_image->setPosition(sf::Vector2f(xPosition, yPosition));
-				letter_three_image->render();
-				break;
-
-			case BlockType::TARGET:
-				DrawTargetBox(Vector);
-				/*sf::RectangleShape overlay(sf::Vector2f(box_dimentions.box_width, box_dimentions.box_height));
-				overlay.setPosition(xPosition, yPosition);
-				overlay.setFillColor(sf::Color(0, 191, 255, 90));
-				game_window->draw(overlay);*/
-				break;
-			}
-
-			/*setPosition();
-			render();*/
+			ImageView* image = getBoxOverlayImage(i);
+			image->setPosition(position);
+			image->render();
 
 		}
 	}
 
 	void LevelView::calculateBoxExtents() // Not readable. Add helper functions 
 	{
-		if (game_window)
+		if (!game_window) return;
+
+		calculateBoxWidthHeight();
+		calculateBoxSpacing();
+
+	}
+
+
+	void LevelView::calculateBoxWidthHeight()
+	{
+		float screenWidth = static_cast<float>(game_window->getSize().x);
+		int numBoxes = LevelData::NUMBER_OF_BOXES;
+		
+		//Each Box has a Gap on it's left, 1 extra gap for last block's right side
+		int numGaps = numBoxes + 1; 
+
+		//Total space consumed by all gaps
+		float totalSpaceByGaps = box_dimentions.box_spacing_percentage * static_cast<float>(numGaps); 
+
+		//Total space consumed by boxes and gaps
+		float totalSpace = numBoxes + totalSpaceByGaps;
+		
+		box_dimentions.box_width = screenWidth / (totalSpace);
+		box_dimentions.box_height = box_dimentions.box_width;
+	}
+
+	void LevelView::calculateBoxSpacing()
+	{
+		box_dimentions.box_spacing = box_dimentions.box_spacing_percentage * box_dimentions.box_width;
+	}
+
+	sf::Vector2f LevelView::calculateBoxPosition(int index)
+	{
+		float xPosition = box_dimentions.box_spacing + static_cast<float>(index) * (box_dimentions.box_width + box_dimentions.box_spacing);
+		float yPosition = static_cast<float>(game_window->getSize().y) - box_dimentions.box_height - box_dimentions.bottom_offset;
+		return sf::Vector2f(xPosition, yPosition);
+	}
+
+	ImageView* LevelView::getBoxOverlayImage(int index)
+	{
+		switch (current_level_data.level_boxes[index])
 		{
-			float screenWidth = static_cast<float>(game_window->getSize().x);
-			int numBoxes = LevelData::NUMBER_OF_BOXES;
+		case BlockType::OBSTACLE_ONE:
+			return obstacle_one_overlay_image;
 
-			float totalBoxes = (numBoxes + box_dimentions.box_spacing_percentage * static_cast<float>(numBoxes + 1));
+		case BlockType::OBSTACLE_TWO:
+			return obstacle_two_overlay_image;
 
-			box_dimentions.box_width = screenWidth / totalBoxes;
-			box_dimentions.box_spacing = box_dimentions.box_spacing_percentage * box_dimentions.box_width;
+		case BlockType::ONE:
+			return letter_one_overlay_image;
 
-			box_dimentions.box_height = box_dimentions.box_width;
+		case BlockType::TWO:
+			return letter_two_overlay_image;
+
+		case BlockType::THREE:
+			return letter_three_overlay_image;
+
+		case BlockType::TARGET:
+			return target_overlay_image;
 		}
+		return nullptr;
 	}
 
 
