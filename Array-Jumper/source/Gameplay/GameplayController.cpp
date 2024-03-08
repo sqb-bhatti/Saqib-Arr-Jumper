@@ -2,12 +2,14 @@
 #include "../../header/Global/ServiceLocator.h"
 #include "../../header/Level/LevelData.h"
 #include "../../header/Sound/SoundService.h"
+#include "../../header/Main/GameService.h"
 
 namespace Gameplay
 {
 	using namespace Global;
 	using namespace Level;
 	using namespace Sound;
+	using namespace Main;
 
 	void GameplayController::intialize()
 	{//Yet to Implement
@@ -42,7 +44,7 @@ namespace Gameplay
 
 	bool GameplayController::isEndBlock(int position)
 	{
-		if (position == LevelData::NUMBER_OF_BOXES)
+		if (position == LevelData::NUMBER_OF_BOXES - 1)
 			return true;
 		return false;
 	}
@@ -55,5 +57,8 @@ namespace Gameplay
 
 	void GameplayController::processEndBlock()
 	{
+		ServiceLocator::getInstance()->getPlayerService()->levelComplete();
+		ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::LEVEL_COMPLETE);
+		GameService::setGameState(GameState::CREDITS);
 	}
 }

@@ -23,7 +23,6 @@ namespace Player
 		Event::EventService* event_service;
 
 		void destroy();
-		void resetPlayer();
 
 		void readInput();
 		void move(MovementDirection direction);
@@ -45,6 +44,7 @@ namespace Player
 
 		int getCurrentPosition();
 
+		void resetPlayer();
 		void takeDamage();
 	};
 }
