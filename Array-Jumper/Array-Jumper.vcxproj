@@ -153,11 +153,11 @@
     <ClCompile Include="source\UI\MainMenu\MainMenuUIController.cpp" />
     <ClCompile Include="source\UI\SplashScreen\SplashScreenUIController.cpp" />
     <ClCompile Include="source\UI\UIService.cpp" />
-    <ClCompile Include="source\UI\UI\UIElement\AnimatedImageView.cpp" />
-    <ClCompile Include="source\UI\UI\UIElement\ButtonView.cpp" />
-    <ClCompile Include="source\UI\UI\UIElement\ImageView.cpp" />
-    <ClCompile Include="source\UI\UI\UIElement\TextView.cpp" />
-    <ClCompile Include="source\UI\UI\UIElement\UIView.cpp" />
+    <ClCompile Include="source\UI\UIElement\AnimatedImageView.cpp" />
+    <ClCompile Include="source\UI\UIElement\ButtonView.cpp" />
+    <ClCompile Include="source\UI\UIElement\ImageView.cpp" />
+    <ClCompile Include="source\UI\UIElement\TextView.cpp" />
+    <ClCompile Include="source\UI\UIElement\UIView.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\Global\Config.h" />
