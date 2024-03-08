@@ -35,9 +35,4 @@ namespace Level
 		return level_view->getBoxDimentions();
 	}
 
-	LevelData LevelController::getLevelData()
-	{
-		return level_model->getCurrentLevelData();
-	}
-
 }

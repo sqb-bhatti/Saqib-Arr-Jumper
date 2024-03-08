@@ -82,17 +82,25 @@ namespace Level
 
 		for (int i = 0; i < LevelData::NUMBER_OF_BOXES; ++i)
 		{
-			float xPosition = box_dimentions.box_spacing + static_cast<float>(i) * (box_dimentions.box_width + box_dimentions.box_spacing);
+			// CalculateBoxPosition();
+
+			/*float xPosition = box_dimentions.box_spacing + static_cast<float>(i) * (box_dimentions.box_width + box_dimentions.box_spacing);
 			float yPosition = static_cast<float>(game_window->getSize().y) - box_dimentions.box_height - box_dimentions.bottom_offset;
 			
+			initializeBoxBacground();
+			
 			box_image->setPosition(sf::Vector2f(xPosition, yPosition));
-			box_image->render();
+			box_image->render();*/
 
 			switch (current_level_data.level_boxes[i])
 			{
+				ImageView image;
+
+
 			case BlockType::OBSTACLE_ONE:
-				obstacle_one_image->setPosition(sf::Vector2f(xPosition, yPosition));
-				obstacle_one_image->render();
+				image = obstacle_one_image;
+				/*obstacle_one_image->setPosition(sf::Vector2f(xPosition, yPosition));
+				obstacle_one_image->render();*/
 				break;
 
 			case BlockType::OBSTACLE_TWO:
@@ -116,17 +124,21 @@ namespace Level
 				break;
 
 			case BlockType::TARGET:
-				sf::RectangleShape overlay(sf::Vector2f(box_dimentions.box_width, box_dimentions.box_height));
+				DrawTargetBox(Vector);
+				/*sf::RectangleShape overlay(sf::Vector2f(box_dimentions.box_width, box_dimentions.box_height));
 				overlay.setPosition(xPosition, yPosition);
 				overlay.setFillColor(sf::Color(0, 191, 255, 90));
-				game_window->draw(overlay);
+				game_window->draw(overlay);*/
 				break;
 			}
+
+			/*setPosition();
+			render();*/
 
 		}
 	}
 
-	void LevelView::calculateBoxExtents()
+	void LevelView::calculateBoxExtents() // Not readable. Add helper functions 
 	{
 		if (game_window)
 		{

@@ -8,7 +8,7 @@ namespace Level
 	{
 	private:
 		
-		const float background_alpha = 110.f;
+		const float background_alpha = 110.f; // ?? Model
 
 		BoxDimentions box_dimentions;
 

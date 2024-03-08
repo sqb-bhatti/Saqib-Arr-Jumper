@@ -4,6 +4,7 @@ namespace Level
 {
 	class LevelController;
 	struct BoxDimentions;
+	
 	class LevelService
 	{
 	private:

@@ -5,6 +5,7 @@ namespace Level
 {
 	class LevelView;
 	class LevelModel;
+
 	class LevelController
 	{
 	private:
@@ -20,7 +21,6 @@ namespace Level
 		void render();
 
 		BoxDimentions getBoxDimentions();
-		LevelData getLevelData();
 	};
 }
 
