@@ -11,6 +11,8 @@ namespace Gameplay
 		void processObstacle();
 		void processEndBlock();
 
+		void gameOver();
+
 	public:
 
 		void intialize();
@@ -18,6 +20,7 @@ namespace Gameplay
 		void render();
 
 		void processPosition(int position);
+		void onDeath();
 	};
 }
 

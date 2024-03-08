@@ -26,10 +26,9 @@ namespace Player
 
 		void readInput();
 		void move(MovementDirection direction);
-		void moveBackward();
 		void jump(MovementDirection direction);
-		void jumpBackward();
 		bool isPositionInBound(int targetPosition);
+		void onDeath();
 
 	public:
 		PlayerController();

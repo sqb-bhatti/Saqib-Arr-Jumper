@@ -11,5 +11,7 @@ namespace Gameplay
 
 	void GameplayService::processPosition(int position) { gameplay_controller->processPosition(position); }
 
+	void GameplayService::onDeath() { gameplay_controller->onDeath(); }
+
 	void GameplayService::destroy() { delete(gameplay_controller); }
 }
