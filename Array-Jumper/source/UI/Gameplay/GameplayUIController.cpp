@@ -54,18 +54,14 @@ namespace UI
 			float x_position = (static_cast<float>(windowWidth) - right_offset);
 			float y_position = top_offset;
 
-
-			life_count_text->initialize("0", sf::Vector2f(x_position, y_position), FontType::BUBBLE_BOBBLE, font_size, sf::Color::Green);
-			life_count_text->show();
+			life_count_text->initialize("0", sf::Vector2f(x_position, y_position), FontType::BUBBLE_BOBBLE, font_size, sf::Color::White);
 		}
 
 		void GameplayUIController::updateLifeCountText()
 		{
-			life_count_text->update();
-
 			int life_count = ServiceLocator::getInstance()->getPlayerService()->getCurrentLives();
 
-			std::string life_count_string = std::to_string(life_count);
+			std::string life_count_string = "LIFE: " + std::to_string(life_count);
 
 			life_count_text->setText(life_count_string);
 			life_count_text->update();

@@ -19,7 +19,6 @@ namespace UI
 		Instrcutions::InstrcutionsUIController* instructions_ui_controller;
 		GameplayUI::GameplayUIController* gameplay_ui_controller;
 
-		sf::RenderWindow* game_window;
 
 		void createControllers();
 		void initializeControllers();

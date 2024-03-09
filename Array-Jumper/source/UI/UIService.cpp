@@ -1,6 +1,7 @@
 #include "../../header/UI/UIService.h"
 #include "../../header/Main/GameService.h"
 #include "../../header/Global/ServiceLocator.h"
+#include "../../header/UI/UIElement/TextView.h"
 
 
 
@@ -13,6 +14,7 @@ namespace UI
     using namespace GameplayUI;
     using namespace Instrcutions;
     using namespace Global;
+    using namespace UIElement;
 
     UIService::UIService()
     {
@@ -21,7 +23,6 @@ namespace UI
         credits_screen_ui_controller = nullptr;
         instructions_ui_controller = nullptr;
         gameplay_ui_controller = nullptr;
-        game_window = nullptr;
 
         createControllers();
     }
@@ -42,7 +43,7 @@ namespace UI
 
     void UIService::initialize()
     {
-        game_window = ServiceLocator::getInstance()->getGraphicService()->getGameWindow();
+        TextView::initializeTextView();
         initializeControllers();
     }
 
