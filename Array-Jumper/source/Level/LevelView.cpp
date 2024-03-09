@@ -1,6 +1,5 @@
 #include "../../header/Level/LevelView.h"
 #include "../../header/Level/LevelModel.h"
-#include "../../header/Level/LevelData.h"
 #include "../../header/Global/ServiceLocator.h"
 #include "../../header/Global/Config.h"
 
@@ -10,9 +9,12 @@ namespace Level
 	using namespace UI::UIElement;
 	using namespace Level;
 
-	LevelView::LevelView()
+	LevelView::LevelView(LevelController* controller)
 	{
+		printf("Level_View Created\n");
+
 		game_window = nullptr;
+		level_controller = level_controller;
 
 		createImages();
 	}
@@ -140,7 +142,8 @@ namespace Level
 
 	ImageView* LevelView::getBoxOverlayImage(int index)
 	{
-		switch (current_level_data.level_boxes[index])
+		//switch (current_level_data.level_boxes[index])
+		switch (level_controller->getCurrentBoxValue(index))
 		{
 		case BlockType::OBSTACLE_ONE:
 			return obstacle_one_overlay_image;

@@ -61,7 +61,7 @@ namespace UI
 		{
 			int life_count = ServiceLocator::getInstance()->getPlayerService()->getCurrentLives();
 
-			std::string life_count_string = "LIFE: " + std::to_string(life_count);
+			std::string life_count_string =  "LIFE: " + std::to_string(life_count);
 
 			life_count_text->setText(life_count_string);
 			life_count_text->update();

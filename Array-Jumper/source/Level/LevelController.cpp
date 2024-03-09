@@ -9,15 +9,16 @@ namespace Level
 
 	LevelController::LevelController()
 	{
-		level_view = new LevelView();
 		level_model = new LevelModel();
+		level_view = new LevelView(this);
 	}
 
-	LevelController::~LevelController() {}
+	LevelController::~LevelController() { delete(level_view); delete(level_model); }
 
 	void LevelController::initialize()
 	{
 		level_view->initialize();
+		printf("Current Index: %d\n", level_model->getCurrentBoxValue(1));
 	}
 
 	void LevelController::update()
@@ -37,7 +38,20 @@ namespace Level
 
 	int LevelController::getCurrentBoxValue(int currentPosition)
 	{
-		return level_model->getCurrentBoxValue(currentPosition);
+		/*printf("Current Index: %d\n", level_model->getCurrentBoxValue(3));
+
+		return level_model->getCurrentBoxValue(currentPosition);*/
+		return level_model->current_level_index;
+	}
+
+	bool LevelController::isLastLevel()
+	{
+		return level_model->isLastLevel();
+	}
+
+	void LevelController::loadNextLevel()
+	{
+		level_model->loadNextLevel();
 	}
 
 }
