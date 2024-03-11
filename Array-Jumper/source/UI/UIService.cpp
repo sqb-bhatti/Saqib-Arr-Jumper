@@ -1,4 +1,5 @@
 #include "../../header/UI/UIService.h"
+#include "../../header/UI/Instructions/InstructionsUIController.h"
 #include "../../header/Main/GameService.h"
 #include "../../header/Global/ServiceLocator.h"
 #include "../../header/UI/UIElement/TextView.h"
@@ -12,7 +13,7 @@ namespace UI
     using namespace MainMenu;
     using namespace Credits;
     using namespace GameplayUI;
-    using namespace Instrcutions;
+    using namespace Instructions;
     using namespace Global;
     using namespace UIElement;
 
@@ -37,7 +38,7 @@ namespace UI
         splash_screen_ui_controller = new SplashScreenUIController();
         main_menu_ui_controller = new MainMenuUIController();
         credits_screen_ui_controller = new CreditsScreenUIController();
-        instructions_ui_controller = new InstrcutionsUIController();
+        instructions_ui_controller = new InstructionsScreenUIController();
         gameplay_ui_controller = new GameplayUIController();
     }
 

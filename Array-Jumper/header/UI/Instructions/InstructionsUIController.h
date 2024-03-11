@@ -1,62 +1,59 @@
 #pragma once
-#include <SFML/Graphics.hpp>
-#include "../../header/Graphics/GraphicService.h"
-
+#include "../../header/UI/UIElement/ImageView.h"
+#include "../../header/UI/UIElement/ButtonView.h"
+#include "../../header/UI/UIElement/TextView.h"
 
 namespace UI
 {
-	namespace Instrcutions
+	namespace Instructions
 	{
-		class InstrcutionsUIController
+		class InstructionsScreenUIController
 		{
 		private:
 			// Constants:
-			const int number_of_instructions = 4;
-			
 			const float button_width = 400.f;
 			const float button_height = 140.f;
 
-			// Textures:
-			sf::Texture background_texture;
-			sf::Sprite background_sprite;
+			const float menu_button_y_position = 800.f;
+			const float background_alpha = 85.f;
 
-			sf::Texture menu_button_texture;
-			sf::Sprite menu_button_sprite;
-
-			//Text:
-			sf::String* instructions;
-			
+			static const int number_of_instructions = 4;
 			const float top_offset = 250.f;
 			const float text_spacing = 100.f;
+			const int font_size = 50;
 
-			const sf::String instruction_string_one = "Move with 'Left' and 'Right' arrow keys";
-			const sf::String instruction_string_two = "Hold 'Space' while moving to 'JUMP'";
-			const sf::String instruction_string_three = "Your player will 'JUMP' forward or backward by the value of your current cell";
-			const sf::String instruction_string_four = "Reach the target cell to 'Win' the game";
+			const sf::Color text_color = sf::Color::White;
 
-			sf::RenderWindow* game_window;
+			sf::String instructions[number_of_instructions] = { "Move with 'Left' and 'Right' arrow key",
+																"Hold 'Space' while moving to 'JUMP'",
+																"Your player will 'JUMP' forward or backward by the value of your current cell",
+																"Reach the target cell to 'Win' the game"};
 
-			void initializeInstructions();
+			UIElement::ImageView* background_image;
+			UIElement::ButtonView* menu_button;
+
+			std::vector<UIElement::TextView*> instructions_text_list;
+
+			void createImage();
+			void createButtons();
+			void createText();
 			void initializeBackgroundImage();
-			void initializeMainMenuButton();
-			
-			void drawInstructions();
-			void scaleBackgroundImage();
-			void scaleButton(sf::Sprite* button_to_scale);
-			
-			void handleButtonInteractions();
-			bool pressedMouseButton();
-			bool clickedButton(sf::Sprite* button_sprite, sf::Vector2f mouse_position);
-			
-			void onDestroy();
+			void initializeButtons();
+			void initializeTexts();
+			void registerButtonCallback();
+
+			void menuButtonCallback();
+
+			void destroy();
 
 		public:
-			InstrcutionsUIController();
-			~InstrcutionsUIController();
+			InstructionsScreenUIController();
+			~InstructionsScreenUIController();
 
 			void initialize();
 			void update();
 			void render();
+			void show();
 		};
 	}
 }

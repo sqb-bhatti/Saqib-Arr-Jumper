@@ -19,10 +19,7 @@ namespace Level
 		level_view->initialize();
 	}
 
-	void LevelController::update()
-	{
-		//Yet to implement
-	}
+	void LevelController::update() { /* Not Implemented */ }
 
 	void LevelController::render()
 	{

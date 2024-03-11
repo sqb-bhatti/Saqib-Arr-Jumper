@@ -98,7 +98,7 @@ namespace Level
 		}
 	}
 
-	void LevelView::calculateBoxExtents() // Not readable. Add helper functions 
+	void LevelView::calculateBoxExtents()
 	{
 		if (!game_window) return;
 

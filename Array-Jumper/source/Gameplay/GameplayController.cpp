@@ -11,18 +11,11 @@ namespace Gameplay
 	using namespace Sound;
 	using namespace Main;
 
-	void GameplayController::intialize()
-	{//Yet to Implement
-		ServiceLocator::getInstance()->getLevelService()->loadNextLevel();
-	}
+	void GameplayController::intialize() { /*Not Implemented */ }
 
-	void GameplayController::update()
-	{//Yet to Implement
-	}
+	void GameplayController::update() { /* Not Implemented */ }
 
-	void GameplayController::render()
-	{//Yet to Implement
-	}
+	void GameplayController::render() { /* Not Implemented */ }
 
 	void GameplayController::processPosition(int position)
 	{
@@ -92,6 +85,8 @@ namespace Gameplay
 	void GameplayController::gameWon()
 	{
 		GameService::setGameState(GameState::CREDITS);
+		ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::GAME_WON);
+
 	}
 
 	void GameplayController::loadNextLevel()
