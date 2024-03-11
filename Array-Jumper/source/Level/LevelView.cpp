@@ -11,10 +11,8 @@ namespace Level
 
 	LevelView::LevelView(LevelController* controller)
 	{
-		printf("Level_View Created\n");
-
 		game_window = nullptr;
-		level_controller = level_controller;
+		level_controller = controller;
 
 		createImages();
 	}

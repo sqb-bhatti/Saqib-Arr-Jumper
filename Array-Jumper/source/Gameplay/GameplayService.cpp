@@ -9,6 +9,8 @@ namespace Gameplay
 	void GameplayService::update() { gameplay_controller->update(); }
 	void GameplayService::render() { gameplay_controller->render(); }
 
+	void GameplayService::startGame() {	gameplay_controller->startGame(); }
+
 	void GameplayService::processPosition(int position) { gameplay_controller->processPosition(position); }
 
 	void GameplayService::onDeath() { gameplay_controller->onDeath(); }

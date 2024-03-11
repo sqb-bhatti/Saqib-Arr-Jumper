@@ -31,6 +31,9 @@ namespace Level
 
 		bool isLastLevel();
 		void loadNextLevel();
+		int getCurrentLevelNumber();
+
+		void reset();
 	};
 }
 

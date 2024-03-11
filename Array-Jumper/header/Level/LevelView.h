@@ -1,5 +1,6 @@
 #pragma once
 #include "LevelModel.h"
+#include "LevelData.h"
 #include "LevelController.h"
 #include "../../header/UI/UIElement/ImageView.h"
 
@@ -25,7 +26,7 @@ namespace Level
 		UI::UIElement::ImageView* obstacle_one_overlay_image;
 		UI::UIElement::ImageView* obstacle_two_overlay_image;
 
-		//LevelData current_level_data;
+		LevelData current_level_data;
 
 		void createImages();
 		void updateImages();
@@ -45,7 +46,7 @@ namespace Level
 		void render();
 
 		BoxDimentions getBoxDimentions();
-		
+
 	};
 }
 

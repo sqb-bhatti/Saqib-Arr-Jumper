@@ -43,4 +43,14 @@ namespace Level
 	{
 		level_controller->loadNextLevel();
 	}
+
+	int LevelService::getCurrentLevelNumber()
+	{
+		return level_controller->getCurrentLevelNumber();
+	}
+
+	void LevelService::resetLevels()
+	{
+		level_controller->reset();
+	}
 }

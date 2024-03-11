@@ -22,6 +22,9 @@ namespace Level
 		int getCurrentBoxValue(int currentPosition);
 		bool isLastLevel();
 		void loadNextLevel();
+		int getCurrentLevelNumber();
+
+		void resetLevels();
 	};
 }
 

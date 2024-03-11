@@ -67,14 +67,38 @@ namespace Gameplay
 		ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::LEVEL_COMPLETE);
 
 
-		if (ServiceLocator::getInstance()->getLevelService()->isLastLevel())
+		if(isLastLevel())
 		{
-			GameService::setGameState(GameState::CREDITS);
+			gameWon();
 			return;
 		}
 
+		loadNextLevel();
+	}
+	
+	bool GameplayController::isLastLevel()
+	{
+		return ServiceLocator::getInstance()->getLevelService()->isLastLevel();
+	}
+
+	void GameplayController::startGame()
+	{
+		GameService::setGameState(GameState::GAMEPLAY);
+		return ServiceLocator::getInstance()->getLevelService()->resetLevels();
+		return ServiceLocator::getInstance()->getPlayerService()->resetPlayer();
+
+	}
+
+	void GameplayController::gameWon()
+	{
+		GameService::setGameState(GameState::CREDITS);
+	}
+
+	void GameplayController::loadNextLevel()
+	{
 		ServiceLocator::getInstance()->getLevelService()->loadNextLevel();
 	}
+
 
 	void GameplayController::gameOver()
 	{
