@@ -28,6 +28,14 @@ namespace UI
             destroy();
         }
 
+        void InstructionsUIController::initialize()
+        {
+            initializeTexts();
+            initializeBackgroundImage();
+            initializeButtons();
+            registerButtonCallback();
+        }
+
         void InstructionsUIController::createImage()
         {
             background_image = new ImageView();
@@ -44,14 +52,6 @@ namespace UI
             {
                 instructions_text_list.push_back(new TextView());
             }
-        }
-
-        void InstructionsUIController::initialize()
-        {
-            initializeTexts();
-            initializeBackgroundImage();
-            initializeButtons();
-            registerButtonCallback();
         }
 
         void InstructionsUIController::initializeBackgroundImage()

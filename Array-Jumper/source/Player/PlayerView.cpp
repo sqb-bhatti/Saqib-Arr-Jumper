@@ -45,18 +45,22 @@ namespace Player
 
 	void PlayerView::loadPlayer()
 	{
-		current_box_dimentions = ServiceLocator::getInstance()->getLevelService()->getBoxDimentions();
-
-		player_height = current_box_dimentions.box_height;
-		
+		CalculatePlayerDimensions();
 		initializePlayerImage();
 	}
 
+	void PlayerView::CalculatePlayerDimensions()
+	{
+		current_box_dimensions = ServiceLocator::getInstance()->getLevelService()->getBoxDimensions();
+		player_height = current_box_dimensions.box_height;
+		player_width = current_box_dimensions.box_width;
+	}
 
 	void PlayerView::initializePlayerImage()
 	{
+
 		player_image->initialize(Config::character_texture_path,
-			current_box_dimentions.box_width,
+			player_width,
 			player_height,
 			sf::Vector2f(0, 0));
 	}
@@ -69,8 +73,8 @@ namespace Player
 
 	sf::Vector2f PlayerView::calulcatePlayerPosition()
 	{
-		float xPosition = current_box_dimentions.box_spacing + static_cast<float>(player_controller->getCurrentPosition()) * (current_box_dimentions.box_width + current_box_dimentions.box_spacing);
-		float yPosition = static_cast<float>(game_window->getSize().y) - current_box_dimentions.box_height - current_box_dimentions.bottom_offset - player_height;
+		float xPosition = current_box_dimensions.box_spacing + static_cast<float>(player_controller->getCurrentPosition()) * (current_box_dimensions.box_width + current_box_dimensions.box_spacing);
+		float yPosition = static_cast<float>(game_window->getSize().y) - current_box_dimensions.box_height - current_box_dimensions.bottom_offset - player_height;
 		return sf::Vector2f(xPosition, yPosition);
 	}
 }
