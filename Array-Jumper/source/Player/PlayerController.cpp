@@ -108,10 +108,10 @@ namespace Player
 		int steps, targetPosition;
 		switch (direction)
 		{
-		case Player::FORWARD:
+		case MovementDirection::FORWARD:
 			steps = 1;
 			break;
-		case Player::BACKWARD:
+		case MovementDirection::BACKWARD:
 			steps = -1;
 			break;
 		default:
@@ -137,10 +137,10 @@ namespace Player
 
 		switch (direction)
 		{
-		case Player::FORWARD:
+		case MovementDirection::FORWARD:
 			steps = value;
 			break;
-		case Player::BACKWARD:
+		case MovementDirection::BACKWARD:
 			steps = -value;
 			break;
 		default:
