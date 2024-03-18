@@ -18,7 +18,7 @@ namespace Level
 		void update();
 		void render();
 
-		BoxDimentions getBoxDimentions();
+		BoxDimentions getBoxDimensions();
 	};
 }
 
