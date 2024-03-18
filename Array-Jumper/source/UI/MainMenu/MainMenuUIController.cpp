@@ -27,13 +27,6 @@ namespace UI
             destroy();
         }
 
-        void MainMenuUIController::initialize()
-        {
-            initializeBackgroundImage();
-            initializeButtons();
-            registerButtonCallback();
-        }
-
         void MainMenuUIController::createImage()
         {
             background_image = new ImageView();
@@ -46,11 +39,19 @@ namespace UI
             quit_button = new ButtonView();
         }
 
+        void MainMenuUIController::initialize()
+        {
+            initializeBackgroundImage();
+            initializeButtons();
+            registerButtonCallback();
+        }
+
         void MainMenuUIController::initializeBackgroundImage()
         {
             sf::RenderWindow* game_window = ServiceLocator::getInstance()->getGraphicService()->getGameWindow();
 
             background_image->initialize(Config::array_jumper_bg_texture_path, game_window->getSize().x, game_window->getSize().y, sf::Vector2f(0, 0));
+            background_image->setImageAlpha(background_alpha);
         }
 
         void MainMenuUIController::initializeButtons()
@@ -75,7 +76,6 @@ namespace UI
         {
             ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::BUTTON_CLICK);
             GameService::setGameState(GameState::GAMEPLAY);
-            ServiceLocator::getInstance()->getGameplayService()->startGame();
         }
 
         void MainMenuUIController::instructionsButtonCallback()

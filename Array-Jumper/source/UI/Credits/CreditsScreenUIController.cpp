@@ -28,14 +28,6 @@ namespace UI
             destroy();
         }
 
-        void CreditsScreenUIController::initialize()
-        {
-            initializeText();
-            initializeBackgroundImage();
-            initializeButtons();
-            registerButtonCallback();
-        }
-
         void CreditsScreenUIController::createText()
         {
             title_text = new TextView();
@@ -50,6 +42,14 @@ namespace UI
         {
             menu_button = new ButtonView();
             quit_button = new ButtonView();
+        }
+
+        void CreditsScreenUIController::initialize()
+        {
+            initializeText();
+            initializeBackgroundImage();
+            initializeButtons();
+            registerButtonCallback();
         }
 
         void CreditsScreenUIController::initializeText()

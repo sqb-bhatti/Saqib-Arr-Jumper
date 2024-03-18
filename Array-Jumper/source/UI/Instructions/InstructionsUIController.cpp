@@ -16,37 +16,29 @@ namespace UI
         using namespace Graphics;
         using namespace Sound;
 
-        InstructionsScreenUIController::InstructionsScreenUIController()
+        InstrcutionsUIController::InstrcutionsUIController()
         {
             createButtons();
             createImage();
             createText();
         }
 
-        InstructionsScreenUIController::~InstructionsScreenUIController()
+        InstrcutionsUIController::~InstrcutionsUIController()
         {
             destroy();
         }
 
-        void InstructionsScreenUIController::initialize()
-        {
-            initializeTexts();
-            initializeBackgroundImage();
-            initializeButtons();
-            registerButtonCallback();
-        }
-
-        void InstructionsScreenUIController::createImage()
+        void InstrcutionsUIController::createImage()
         {
             background_image = new ImageView();
         }
 
-        void InstructionsScreenUIController::createButtons()
+        void InstrcutionsUIController::createButtons()
         {
             menu_button = new ButtonView();
         }
 
-        void InstructionsScreenUIController::createText()
+        void InstrcutionsUIController::createText()
         {
             for (int i = 0; i < number_of_instructions; i++)
             {
@@ -54,7 +46,15 @@ namespace UI
             }
         }
 
-        void InstructionsScreenUIController::initializeBackgroundImage()
+        void InstrcutionsUIController::initialize()
+        {
+            initializeTexts();
+            initializeBackgroundImage();
+            initializeButtons();
+            registerButtonCallback();
+        }
+
+        void InstrcutionsUIController::initializeBackgroundImage()
         {
             sf::RenderWindow* game_window = ServiceLocator::getInstance()->getGraphicService()->getGameWindow();
 
@@ -62,13 +62,13 @@ namespace UI
             background_image->setImageAlpha(background_alpha);
         }
 
-        void InstructionsScreenUIController::initializeButtons()
+        void InstrcutionsUIController::initializeButtons()
         {
             menu_button->initialize("Menu Button", Config::menu_button_texture_path, button_width, button_height, sf::Vector2f(0, menu_button_y_position));
             menu_button->setCentreAlinged();
         }
 
-        void InstructionsScreenUIController::initializeTexts()
+        void InstrcutionsUIController::initializeTexts()
         {
             for (int i = 0; i < instructions_text_list.size(); i++)
             {
@@ -77,18 +77,18 @@ namespace UI
             }
         }
 
-        void InstructionsScreenUIController::registerButtonCallback()
+        void InstrcutionsUIController::registerButtonCallback()
         {
-            menu_button->registerCallbackFuntion(std::bind(&InstructionsScreenUIController::menuButtonCallback, this));
+            menu_button->registerCallbackFuntion(std::bind(&InstrcutionsUIController::menuButtonCallback, this));
         }
 
-        void InstructionsScreenUIController::menuButtonCallback()
+        void InstrcutionsUIController::menuButtonCallback()
         {
             ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::BUTTON_CLICK);
             GameService::setGameState(GameState::MAIN_MENU);
         }
 
-        void InstructionsScreenUIController::update()
+        void InstrcutionsUIController::update()
         {
             background_image->update();
             menu_button->update();
@@ -99,7 +99,7 @@ namespace UI
             }
         }
 
-        void InstructionsScreenUIController::render()
+        void InstrcutionsUIController::render()
         {
             background_image->render();
             menu_button->render();
@@ -110,7 +110,7 @@ namespace UI
             }
         }
 
-        void InstructionsScreenUIController::show()
+        void InstrcutionsUIController::show()
         {
             background_image->show();
             menu_button->show();
@@ -121,7 +121,7 @@ namespace UI
             }
         }
 
-        void InstructionsScreenUIController::destroy()
+        void InstrcutionsUIController::destroy()
         {
             delete (background_image);
             delete (menu_button);

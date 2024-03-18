@@ -46,6 +46,7 @@ namespace UI
     {
         TextView::initializeTextView();
         initializeControllers();
+        initializeUIElements();
     }
 
     void UIService::initializeControllers()
@@ -55,6 +56,11 @@ namespace UI
         credits_screen_ui_controller->initialize();
         instructions_ui_controller->initialize();
         gameplay_ui_controller->initialize();
+    }
+
+    void UIService::initializeUIElements()
+    {
+        TextView::initializeTextView();
     }
 
     void UIService::update()
@@ -99,6 +105,11 @@ namespace UI
             gameplay_ui_controller->render();
             break;
         }
+    }
+
+    void UIService::showSplashScreen()
+    {
+        splash_screen_ui_controller->show();
     }
 
     void UIService::onDestroy()
