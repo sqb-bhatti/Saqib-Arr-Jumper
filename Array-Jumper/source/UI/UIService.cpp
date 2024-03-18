@@ -1,4 +1,5 @@
 #include "../../header/UI/UIService.h"
+#include "../../header/UI/Instructions/InstructionsUIController.h"
 #include "../../header/Main/GameService.h"
 #include "../../header/Global/ServiceLocator.h"
 #include "../../header/UI/UIElement/TextView.h"
@@ -43,9 +44,8 @@ namespace UI
 
     void UIService::initialize()
     {
-        TextView::initializeTextView();
-        initializeControllers();
         initializeUIElements();
+        initializeControllers();
     }
 
     void UIService::initializeControllers()

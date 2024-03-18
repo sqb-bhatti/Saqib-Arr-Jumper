@@ -16,11 +16,13 @@ namespace Player
 		UI::UIElement::ImageView* player_image;
 
 		float player_height;
-		Level::BoxDimentions current_box_dimentions;
+		float player_width;
+		Level::BoxDimentions current_box_dimensions;
 
 		void initializePlayerImage();
 		void drawPlayer();
 		void loadPlayer();
+		void CalculatePlayerDimensions();
 		sf::Vector2f calulcatePlayerPosition();
 
 	public:
