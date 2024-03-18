@@ -40,7 +40,7 @@ namespace Level
 		void calculateBoxSpacing();
 		UI::UIElement::ImageView* getBoxOverlayImage(int index);
 	public:
-		LevelView();
+		LevelView(LevelController* controller);
 		~LevelView();
 
 		void initialize();
