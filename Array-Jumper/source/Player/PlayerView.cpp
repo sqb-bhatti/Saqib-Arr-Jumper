@@ -52,6 +52,7 @@ namespace Player
 		initializePlayerImage();
 	}
 
+
 	void PlayerView::initializePlayerImage()
 	{
 		player_image->initialize(Config::character_texture_path,
@@ -62,11 +63,14 @@ namespace Player
 
 	void PlayerView::drawPlayer()
 	{
-		float xPosition = current_box_dimentions.box_spacing + static_cast<float>(player_controller->getCurrentPosition()) * (current_box_dimentions.box_width + current_box_dimentions.box_spacing);
-		float yPosition = static_cast<float>(game_window->getSize().y) - current_box_dimentions.box_height - current_box_dimentions.bottom_offset - player_height;
-
-		player_image->setPosition(sf::Vector2f(xPosition, yPosition));
+		player_image->setPosition(calulcatePlayerPosition());
 		player_image->render();
 	}
 
+	sf::Vector2f PlayerView::calulcatePlayerPosition()
+	{
+		float xPosition = current_box_dimentions.box_spacing + static_cast<float>(player_controller->getCurrentPosition()) * (current_box_dimentions.box_width + current_box_dimentions.box_spacing);
+		float yPosition = static_cast<float>(game_window->getSize().y) - current_box_dimentions.box_height - current_box_dimentions.bottom_offset - player_height;
+		return sf::Vector2f(xPosition, yPosition);
+	}
 }
