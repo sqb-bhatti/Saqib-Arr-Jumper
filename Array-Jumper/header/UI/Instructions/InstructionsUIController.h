@@ -8,7 +8,7 @@ namespace UI
 {
 	namespace Instructions
 	{
-		class InstructionsScreenUIController
+		class InstructionsUIController
 		{
 		private:
 			// Constants:
@@ -48,8 +48,8 @@ namespace UI
 			void destroy();
 
 		public:
-			InstructionsScreenUIController();
-			~InstructionsScreenUIController();
+			InstructionsUIController();
+			~InstructionsUIController();
 
 			void initialize();
 			void update();

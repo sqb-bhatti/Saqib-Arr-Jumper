@@ -38,7 +38,7 @@ namespace UI
         splash_screen_ui_controller = new SplashScreenUIController();
         main_menu_ui_controller = new MainMenuUIController();
         credits_screen_ui_controller = new CreditsScreenUIController();
-        instructions_ui_controller = new InstructionsScreenUIController();
+        instructions_ui_controller = new InstructionsUIController();
         gameplay_ui_controller = new GameplayUIController();
     }
 
