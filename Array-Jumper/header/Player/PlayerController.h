@@ -1,15 +1,9 @@
 #pragma once
 #include "../../header/Event/EventService.h"
+#include "MovementDirection.h"
 
 namespace Player
 {
-
-	enum MovementDirection
-	{
-		FORWARD,
-		BACKWARD
-	};
-
 	class PlayerView;
 	class PlayerModel;
 	enum class PlayerState;
