@@ -121,7 +121,7 @@ public:
     virtual void create(WindowHandle handle);
 
     ////////////////////////////////////////////////////////////
-    /// \brief Close the window and destroy all the attached resources
+    /// \brief Close the window and deleteImages all the attached resources
     ///
     /// After calling this function, the sf::Window instance remains
     /// valid and you can call create() to recreate the window.
