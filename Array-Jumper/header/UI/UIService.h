@@ -21,6 +21,7 @@ namespace UI
 
 
 		void createControllers();
+		void initializeUIElements();
 		void initializeControllers();
 		void onDestroy();
 
@@ -31,5 +32,7 @@ namespace UI
 		void initialize();
 		void update();
 		void render();
+
+		void showSplashScreen();
 	};
 }
