@@ -20,7 +20,7 @@ namespace Level
 	void LevelView::initialize()
 	{
 		game_window = ServiceLocator::getInstance()->getGraphicService()->getGameWindow();
-		calculateBoxExtents();
+		calculateBoxDimentions();
 		initializeImages();
 	}
 
@@ -98,7 +98,7 @@ namespace Level
 		}
 	}
 
-	void LevelView::calculateBoxExtents() // Not readable. Add helper functions 
+	void LevelView::calculateBoxDimentions()
 	{
 		if (!game_window) return;
 
