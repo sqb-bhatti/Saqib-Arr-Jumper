@@ -17,6 +17,11 @@ namespace Level
 		createImages();
 	}
 
+	LevelView::~LevelView()
+	{
+		deleteImages();
+	}
+
 	void LevelView::initialize()
 	{
 		game_window = ServiceLocator::getInstance()->getGraphicService()->getGameWindow();
@@ -163,5 +168,16 @@ namespace Level
 		return nullptr;
 	}
 
+	void LevelView::deleteImages()
+	{
+		delete(background_image);
+		delete(box_image);
+		delete(target_overlay_image);
+		delete(letter_one_overlay_image);
+		delete(letter_two_overlay_image);
+		delete(letter_three_overlay_image);
+		delete(obstacle_one_overlay_image);
+		delete(obstacle_two_overlay_image);
+	}
 
 }

@@ -29,6 +29,7 @@ namespace Level
 		void updateImages();
 		void initializeImages();
 		void drawLevel();
+		void deleteImages();
 
 		void calculateBoxDimentions();
 		sf::Vector2f calculateBoxPosition(int index);
@@ -37,6 +38,7 @@ namespace Level
 		UI::UIElement::ImageView* getBoxOverlayImage(int index);
 	public:
 		LevelView();
+		~LevelView();
 
 		void initialize();
 		void update();
