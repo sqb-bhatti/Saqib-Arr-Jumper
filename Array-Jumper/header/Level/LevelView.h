@@ -33,7 +33,7 @@ namespace Level
 		void initializeImages();
 		void drawLevel();
 
-		void calculateBoxExtents();
+		void calculateBoxDimentions();
 		sf::Vector2f calculateBoxPosition(int index);
 		void calculateBoxWidthHeight();
 		void calculateBoxSpacing();
