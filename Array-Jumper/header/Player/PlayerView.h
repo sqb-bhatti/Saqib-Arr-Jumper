@@ -21,6 +21,7 @@ namespace Player
 		void initializePlayerImage();
 		void drawPlayer();
 		void loadPlayer();
+		sf::Vector2f calulcatePlayerPosition();
 
 	public:
 		PlayerView(PlayerController* controller);
