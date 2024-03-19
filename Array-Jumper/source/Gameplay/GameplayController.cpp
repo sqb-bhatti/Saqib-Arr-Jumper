@@ -38,8 +38,6 @@ namespace Gameplay
 		gameOver();
 	}
 
-
-
 	bool GameplayController::isObstacle(int value)
 	{
 		if (value == -1 || value == -2)
