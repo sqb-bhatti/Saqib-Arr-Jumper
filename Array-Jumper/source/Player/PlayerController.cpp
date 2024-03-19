@@ -126,7 +126,7 @@ namespace Player
 
 		player_model->setCurrentPosition(targetPosition);
 		ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::MOVE);
-		ServiceLocator::getInstance()->getGameplayService()->processPosition(targetPosition);
+		ServiceLocator::getInstance()->getGameplayService()->onPositionChanged(targetPosition);
 	}
 
 	void PlayerController::jump(MovementDirection direction)
@@ -155,7 +155,7 @@ namespace Player
 
 		player_model->setCurrentPosition(targetPosition);
 		ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::JUMP);
-		ServiceLocator::getInstance()->getGameplayService()->processPosition(targetPosition);
+		ServiceLocator::getInstance()->getGameplayService()->onPositionChanged(targetPosition);
 	}
 
 	bool PlayerController::isPositionInBound(int targetPosition)

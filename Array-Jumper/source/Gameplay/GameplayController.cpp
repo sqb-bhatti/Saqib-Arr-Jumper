@@ -17,7 +17,7 @@ namespace Gameplay
 
 	void GameplayController::render() { /* Not Implemented */ }
 
-	void GameplayController::processPosition(int position)
+	void GameplayController::onPositionChanged(int position)
 	{
 		int value = ServiceLocator::getInstance()->getLevelService()->getCurrentBoxValue(position);
 
