@@ -19,7 +19,7 @@ namespace Gameplay
 		void update();
 		void render();
 
-		void processPosition(int position);
+		void onPositionChanged(int position);
 		void onDeath();
 	};
 }
