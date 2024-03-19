@@ -131,7 +131,6 @@ namespace Player
 
 	void PlayerController::jump(MovementDirection direction)
 	{
-		int current_position = player_model->getCurrentPosition();
 		int value = ServiceLocator::getInstance()->getLevelService()->getCurrentBoxValue(current_position);
 		int steps, targetPosition;
 
@@ -148,7 +147,7 @@ namespace Player
 			break;
 		}
 
-		targetPosition = current_position + steps;
+		targetPosition = player_model->getCurrentPosition() + steps;
 
 		if (!isPositionInBound(targetPosition))
 			return;
