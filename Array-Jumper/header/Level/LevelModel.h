@@ -22,8 +22,8 @@ namespace Level
 		const int number_of_level = LevelConfiguration::NUMBER_OF_LEVELS;
 		LevelConfiguration level_configuration;
 		
-	public:
 		int current_level_index;
+	public:
 		LevelModel();
 		~LevelModel();
 

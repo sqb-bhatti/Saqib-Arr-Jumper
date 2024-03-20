@@ -84,7 +84,6 @@ namespace Gameplay
 	{
 		GameService::setGameState(GameState::CREDITS);
 		ServiceLocator::getInstance()->getSoundService()->playSound(SoundType::GAME_WON);
-
 	}
 
 	void GameplayController::loadNextLevel()

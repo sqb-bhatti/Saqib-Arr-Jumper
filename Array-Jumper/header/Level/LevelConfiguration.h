@@ -46,12 +46,6 @@ namespace Level
             {
                 levels[2].level_boxes[i] = level_3[i];
             }
-
-            /*
-            std::copy(std::begin(level_1), std::end(level_1), levels[0].level_boxes);
-            std::copy(std::begin(level_2), std::end(level_2), levels[1].level_boxes);
-            std::copy(std::begin(level_3), std::end(level_3), levels[2].level_boxes);
-            */
         }
     };
 }
