@@ -29,4 +29,9 @@ namespace Level
 	{
 		return level_controller->getBoxDimentions();
 	}
+
+	BlockType LevelService::getCurrentBoxValue(int currentPosition)
+	{
+		return level_controller->getCurrentBoxValue(currentPosition);
+	}
 }

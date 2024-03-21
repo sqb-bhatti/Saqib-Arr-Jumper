@@ -1,4 +1,5 @@
 #pragma once
+#include "BlockType.h"
 
 namespace Level
 {
@@ -19,6 +20,7 @@ namespace Level
 		void render();
 
 		BoxDimentions getBoxDimensions();
+		BlockType getCurrentBoxValue(int currentPosition);
 	};
 }
 

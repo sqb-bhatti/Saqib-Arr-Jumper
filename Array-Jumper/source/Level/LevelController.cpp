@@ -9,7 +9,7 @@ namespace Level
 
 	LevelController::LevelController()
 	{
-		level_view = new LevelView();
+		level_view = new LevelView(this);
 		level_model = new LevelModel();
 	}
 
@@ -33,6 +33,11 @@ namespace Level
 	BoxDimentions LevelController::getBoxDimentions()
 	{
 		return level_view->getBoxDimentions();
+	}
+
+	BlockType LevelController::getCurrentBoxValue(int currentPosition)
+	{
+		return level_model->getCurrentBoxValue(currentPosition);
 	}
 
 }
