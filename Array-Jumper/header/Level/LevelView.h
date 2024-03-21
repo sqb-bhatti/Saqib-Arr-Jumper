@@ -29,14 +29,14 @@ namespace Level
 		void updateImages();
 		void drawLevel();
 		void drawBox(sf::Vector2f position);
-		void drawBoxValues(sf::Vector2f position, BlockType blockTypeToDraw);
+		void drawBoxValue(sf::Vector2f position, BlockType box_value);
 		void deleteImages();
 
 		void calculateBoxDimentions();
 		sf::Vector2f calculateBoxPosition(int index);
 		void calculateBoxWidthHeight();
 		void calculateBoxSpacing();
-		UI::UIElement::ImageView* getBoxOverlayImage(BlockType index);
+		UI::UIElement::ImageView* getBoxOverlayImage(BlockType block_type);
 	public:
 		LevelView();
 		~LevelView();

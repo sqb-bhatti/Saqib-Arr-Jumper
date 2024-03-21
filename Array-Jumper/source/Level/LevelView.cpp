@@ -104,12 +104,13 @@ namespace Level
 			box_image->render();
 	}
 
-	void LevelView::drawBoxValues(sf::Vector2f position, BlockType blockTypeToDraw)
+	void LevelView::drawBoxValue(sf::Vector2f position, BlockType box_value)
 	{
-			ImageView* image = getBoxOverlayImage(blockTypeToDraw);
+			ImageView* image = getBoxOverlayImage(box_value);
 			image->setPosition(position);
 			image->render();
 	}
+
 
 	void LevelView::calculateBoxDimentions()
 	{
