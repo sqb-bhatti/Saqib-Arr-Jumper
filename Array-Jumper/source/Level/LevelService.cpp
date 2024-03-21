@@ -34,6 +34,4 @@ namespace Level
 	{
 		return level_controller->getCurrentBoxValue(currentPosition);
 	}
-
-	
 }
