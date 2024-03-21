@@ -13,7 +13,6 @@ namespace Level
 	{
 		game_window = nullptr;
 		level_controller = controller;
-
 		createImages();
 	}
 

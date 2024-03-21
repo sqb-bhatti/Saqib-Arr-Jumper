@@ -25,7 +25,6 @@ namespace Level
 		UI::UIElement::ImageView* obstacle_two_overlay_image;
 
 		BoxDimentions box_dimentions;
-		LevelData current_level_data;
 
 		void createImages();
 		void initializeImages();
