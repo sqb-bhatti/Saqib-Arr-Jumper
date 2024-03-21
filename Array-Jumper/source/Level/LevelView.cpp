@@ -94,7 +94,7 @@ namespace Level
 			BlockType blockTypeToDraw = current_level_data.level_boxes[i];
 			
 			drawBox(position);
-			drawBoxValues(position, blockTypeToDraw);
+			drawBoxValue(position, blockTypeToDraw);
 		}
 	}
 
