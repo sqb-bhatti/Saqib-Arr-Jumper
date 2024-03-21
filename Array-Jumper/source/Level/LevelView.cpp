@@ -13,7 +13,6 @@ namespace Level
 	LevelView::LevelView()
 	{
 		game_window = nullptr;
-
 		createImages();
 	}
 

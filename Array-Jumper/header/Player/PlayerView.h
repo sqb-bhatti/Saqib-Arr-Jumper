@@ -11,9 +11,7 @@ namespace Player
 	private:
 		// TODO: Fix spacing. References grouped together + properties grouped together. 
 		sf::RenderWindow* game_window;
-
 		PlayerController* player_controller;
-
 		UI::UIElement::ImageView* player_image;
 
 		float player_height;
@@ -24,6 +22,7 @@ namespace Player
 		void drawPlayer();
 		void loadPlayer();
 		void CalculatePlayerDimensions();
+		void updatePlayerPosition();
 		sf::Vector2f calulcatePlayerPosition();
 
 	public:
