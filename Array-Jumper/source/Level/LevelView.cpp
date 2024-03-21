@@ -91,20 +91,28 @@ namespace Level
 		for (int i = 0; i < LevelData::NUMBER_OF_BOXES; ++i)
 		{
 			sf::Vector2f position = calculateBoxPosition(i);
+			BlockType blockTypeToDraw = current_level_data.level_boxes[i];
+
 			
-			// TODO: drawBox(position, i);
-			// TODO: drawValues(position, i);
-
-			box_image->setPosition(position);
-			box_image->render();
-
-			// TODO: blockTypeToDraw = current_level_data.level_boxes[index];
-			ImageView* image = getBoxOverlayImage(i /* TODO: blockTypeToDraw */ );
-			image->setPosition(position);
-			image->render();
-
+			drawBox(position);
+			drawBoxValue(position, blockTypeToDraw);
 		}
 	}
+
+	void LevelView::drawBox(sf::Vector2f position)
+	{
+			box_image->setPosition(position);
+			box_image->render();
+	}
+
+	void LevelView::drawBoxValue(sf::Vector2f position, BlockType box_value)
+	{
+			ImageView* image = getBoxOverlayImage(box_value);
+			image->setPosition(position);
+			image->render();
+	}
+
+
 
 	void LevelView::calculateBoxDimentions()
 	{
@@ -146,9 +154,9 @@ namespace Level
 		return sf::Vector2f(xPosition, yPosition);
 	}
 
-	ImageView* LevelView::getBoxOverlayImage(int index /* TODO: BlockType blockType */ )
+	ImageView* LevelView::getBoxOverlayImage(BlockType block_type)
 	{
-		switch (current_level_data.level_boxes[index] /* TODO: blockType */ )
+		switch (block_type)
 		{
 		case BlockType::OBSTACLE_ONE:
 			return obstacle_one_overlay_image;
