@@ -22,7 +22,7 @@ namespace Level
 
 	void LevelController::update()
 	{
-		//Yet to implement
+		level_view->update();
 	}
 
 	void LevelController::render()
