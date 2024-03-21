@@ -11,17 +11,17 @@ namespace Level
     private:
 
 
-        int level_1[LevelData::NUMBER_OF_BOXES] =
+        BlockType level_1[LevelData::NUMBER_OF_BOXES] =
         { 
             ONE, TWO, OBSTACLE_ONE, TWO, THREE, ONE, OBSTACLE_TWO, TWO, ONE, TARGET 
         };
 
-        int level_2[LevelData::NUMBER_OF_BOXES] =
+        BlockType level_2[LevelData::NUMBER_OF_BOXES] =
         { 
             ONE, TWO, OBSTACLE_TWO, ONE, TWO, OBSTACLE_ONE, THREE, OBSTACLE_ONE, ONE, TARGET 
         };
 
-        int level_3[LevelData::NUMBER_OF_BOXES] =
+        BlockType level_3[LevelData::NUMBER_OF_BOXES] =
         { 
             ONE, THREE, OBSTACLE_ONE, OBSTACLE_TWO, ONE, TWO, OBSTACLE_ONE, TWO, ONE, TARGET 
         };

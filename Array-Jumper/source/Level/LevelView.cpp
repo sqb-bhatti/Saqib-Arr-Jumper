@@ -92,7 +92,7 @@ namespace Level
 		for (int i = 0; i < LevelData::NUMBER_OF_BOXES; ++i)
 		{
 			sf::Vector2f position = calculateBoxPosition(i);
-			BlockType blockTypeToDraw = current_level_data.level_boxes[i];
+			BlockType blockTypeToDraw = level_controller->getCurrentBoxValue(i);
 			
 			drawBox(position);
 			drawBoxValue(position, blockTypeToDraw);
