@@ -19,7 +19,7 @@ namespace Gameplay
 
 	void GameplayController::onPositionChanged(int position)
 	{
-		int value = ServiceLocator::getInstance()->getLevelService()->getCurrentBoxValue(position);
+		BlockType value = ServiceLocator::getInstance()->getLevelService()->getCurrentBoxValue(position);
 
 		if (isObstacle(value))
 			processObstacle();
@@ -32,9 +32,9 @@ namespace Gameplay
 		gameOver();
 	}
 
-	bool GameplayController::isObstacle(int value)
+	bool GameplayController::isObstacle(BlockType value)
 	{
-		if (value == -1 || value == -2)
+		if (value == BlockType::OBSTACLE_ONE || value == BlockType::OBSTACLE_TWO)
 			return true;
 		return false;
 	}

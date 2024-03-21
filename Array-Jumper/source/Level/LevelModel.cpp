@@ -7,7 +7,7 @@ namespace Level
 
 	LevelModel::~LevelModel(){}
 
-	int LevelModel::getCurrentBoxValue(int currentPosition)
+	BlockType LevelModel::getCurrentBoxValue(int currentPosition)
 	{
 		return level_configuration.levels[current_level_index].level_boxes[currentPosition];
 	}

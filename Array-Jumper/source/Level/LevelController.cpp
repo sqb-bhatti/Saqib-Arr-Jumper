@@ -19,7 +19,10 @@ namespace Level
 		level_view->initialize();
 	}
 
-	void LevelController::update() { /* Not Implemented */ }
+	void LevelController::update()
+	{
+		level_view->update();
+	}
 
 	void LevelController::render()
 	{
@@ -31,7 +34,7 @@ namespace Level
 		return level_view->getBoxDimentions();
 	}
 
-	int LevelController::getCurrentBoxValue(int currentPosition)
+	BlockType LevelController::getCurrentBoxValue(int currentPosition)
 	{
 		return level_model->getCurrentBoxValue(currentPosition);
 	}

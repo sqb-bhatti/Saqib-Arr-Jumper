@@ -8,6 +8,6 @@ namespace Level
     {
         static const int NUMBER_OF_BOXES = 10;
 
-        int level_boxes[NUMBER_OF_BOXES];
+        BlockType level_boxes[NUMBER_OF_BOXES];
     };
 }

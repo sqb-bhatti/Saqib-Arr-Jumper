@@ -27,7 +27,7 @@ namespace Level
 		LevelModel();
 		~LevelModel();
 
-		int getCurrentBoxValue(int currentPosition);
+		BlockType getCurrentBoxValue(int currentPosition);
 
 		bool isLastLevel();
 		void loadNextLevel();

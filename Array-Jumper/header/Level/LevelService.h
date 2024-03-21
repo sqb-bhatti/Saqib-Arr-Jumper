@@ -1,4 +1,6 @@
 #pragma once
+#include "../../header/Level/BlockType.h"
+
 
 namespace Level
 {
@@ -19,7 +21,7 @@ namespace Level
 		void render();
 
 		BoxDimentions getBoxDimensions();
-		int getCurrentBoxValue(int currentPosition);
+		BlockType getCurrentBoxValue(int currentPosition);
 		bool isLastLevel();
 		void loadNextLevel();
 		int getCurrentLevelNumber();
