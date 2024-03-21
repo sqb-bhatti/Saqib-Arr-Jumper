@@ -1,4 +1,5 @@
 #pragma once
+#include "../../header/Level/BlockType.h"
 
 namespace Gameplay
 {
@@ -6,8 +7,8 @@ namespace Gameplay
 	{
 	private:
 
-		bool isObstacle(int value);
-		bool isEndBlock(int value);
+		bool isObstacle(BlockType value);
+		bool isEndBlock(int position);
 		void processObstacle();
 		void processEndBlock();
 

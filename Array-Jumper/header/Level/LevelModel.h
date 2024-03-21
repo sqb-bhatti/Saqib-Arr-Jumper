@@ -22,7 +22,7 @@ namespace Level
 		
 	public:
 		LevelData getCurrentLevelData();
-		int getCurrentBoxValue(int currentPosition);
+		BlockType getCurrentBoxValue(int currentPosition);
 	};
 }
 
