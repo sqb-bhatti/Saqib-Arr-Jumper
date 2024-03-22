@@ -11,6 +11,7 @@ namespace Level
 	private:
 		LevelController* level_controller;
 
+		void destroy();
 	public:
 		LevelService();
 		~LevelService();

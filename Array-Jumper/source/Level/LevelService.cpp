@@ -34,4 +34,9 @@ namespace Level
 	{
 		return level_controller->getCurrentBoxValue(currentPosition);
 	}
+
+	void LevelService::destroy()
+	{
+		delete(level_controller);
+	}
 }
