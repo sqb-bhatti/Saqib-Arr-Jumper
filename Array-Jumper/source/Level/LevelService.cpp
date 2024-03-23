@@ -8,7 +8,7 @@ namespace Level
 		level_controller = new LevelController();
 	}
 
-	LevelService::~LevelService() {};
+	LevelService::~LevelService() { destroy(); }
 
 	void LevelService::intialize()
 	{
