@@ -21,6 +21,9 @@ namespace Level
 		LevelData current_level_data;
 		
 	public:
+		LevelModel();
+		~LevelModel();
+
 		BlockType getCurrentBoxValue(int currentPosition);
 	};
 }
