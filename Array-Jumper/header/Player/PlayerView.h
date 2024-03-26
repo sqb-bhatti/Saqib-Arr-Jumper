@@ -16,7 +16,7 @@ namespace Player
 
 		float player_height;
 		float player_width;
-		Level::BoxDimentions current_box_dimensions;
+		Level::BoxDimensions current_box_dimensions;
 
 		void initializePlayerImage();
 		void drawPlayer();

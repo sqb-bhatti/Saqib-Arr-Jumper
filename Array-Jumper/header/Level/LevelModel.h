@@ -4,7 +4,7 @@
 namespace Level
 {
 
-    struct BoxDimentions
+    struct BoxDimensions
     {
         float box_width;
         float box_height;
