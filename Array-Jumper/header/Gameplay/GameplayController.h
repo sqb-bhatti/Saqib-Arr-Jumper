@@ -7,7 +7,7 @@ namespace Gameplay
 	{
 	private:
 
-		bool isObstacle(BlockType value);
+		bool isObstacle(Level:: BlockType value);
 		bool isEndBlock(int position);
 		void processObstacle();
 		void processEndBlock();

@@ -38,7 +38,7 @@ namespace Gameplay
 		gameOver();
 	}
 
-	bool GameplayController::isObstacle(BlockType value)
+	bool GameplayController::isObstacle(Level::BlockType value)
 	{
 		if (value == BlockType::OBSTACLE_ONE || value == BlockType::OBSTACLE_TWO)
 			return true;
