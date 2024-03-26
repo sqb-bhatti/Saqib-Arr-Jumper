@@ -2,6 +2,8 @@
 
 namespace Level
 {
+	LevelModel::LevelModel() {}
+	LevelModel::~LevelModel() {}
 
 	BlockType LevelModel::getCurrentBoxValue(int currentPosition)
 	{
