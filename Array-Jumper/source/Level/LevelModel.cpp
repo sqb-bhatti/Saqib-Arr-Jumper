@@ -2,10 +2,6 @@
 
 namespace Level
 {
-	LevelData LevelModel::getCurrentLevelData()
-	{
-		return current_level_data;
-	}
 
 	BlockType LevelModel::getCurrentBoxValue(int currentPosition)
 	{
