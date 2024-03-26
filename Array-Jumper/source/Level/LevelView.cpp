@@ -24,7 +24,7 @@ namespace Level
 	void LevelView::initialize()
 	{
 		game_window = ServiceLocator::getInstance()->getGraphicService()->getGameWindow();
-		calculateBoxDimentions();
+		calculateBoxDimensions();
 		initializeImages();
 	}
 
@@ -38,9 +38,9 @@ namespace Level
 		drawLevel();
 	}
 
-	BoxDimentions LevelView::getBoxDimentions()
+	BoxDimensions LevelView::getBoxDimensions()
 	{
-		return box_dimentions;
+		return box_dimensions;
 	}
 
 	void LevelView::createImages()
@@ -62,13 +62,13 @@ namespace Level
 		background_image->setImageAlpha(background_alpha);
 
 		
-		box_image->initialize(Config::box_texture_path, box_dimentions.box_width, box_dimentions.box_height, sf::Vector2f(0, 0));
-		target_overlay_image->initialize(Config::target_texture_path, box_dimentions.box_width, box_dimentions.box_height, sf::Vector2f(0, 0));
-		letter_one_overlay_image->initialize(Config::letter_one_texture_path, box_dimentions.box_width, box_dimentions.box_height, sf::Vector2f(0, 0));
-		letter_two_overlay_image->initialize(Config::letter_two_texture_path, box_dimentions.box_width, box_dimentions.box_height, sf::Vector2f(0, 0));
-		letter_three_overlay_image->initialize(Config::letter_three_texture_path, box_dimentions.box_width, box_dimentions.box_height, sf::Vector2f(0, 0));
-		obstacle_one_overlay_image->initialize(Config::obstacle_01_texture_path, box_dimentions.box_width, box_dimentions.box_height, sf::Vector2f(0, 0));
-		obstacle_two_overlay_image->initialize(Config::obstacle_02_texture_path, box_dimentions.box_width, box_dimentions.box_height, sf::Vector2f(0, 0));
+		box_image->initialize(Config::box_texture_path, box_dimensions.box_width, box_dimensions.box_height, sf::Vector2f(0, 0));
+		target_overlay_image->initialize(Config::target_texture_path, box_dimensions.box_width, box_dimensions.box_height, sf::Vector2f(0, 0));
+		letter_one_overlay_image->initialize(Config::letter_one_texture_path, box_dimensions.box_width, box_dimensions.box_height, sf::Vector2f(0, 0));
+		letter_two_overlay_image->initialize(Config::letter_two_texture_path, box_dimensions.box_width, box_dimensions.box_height, sf::Vector2f(0, 0));
+		letter_three_overlay_image->initialize(Config::letter_three_texture_path, box_dimensions.box_width, box_dimensions.box_height, sf::Vector2f(0, 0));
+		obstacle_one_overlay_image->initialize(Config::obstacle_01_texture_path, box_dimensions.box_width, box_dimensions.box_height, sf::Vector2f(0, 0));
+		obstacle_two_overlay_image->initialize(Config::obstacle_02_texture_path, box_dimensions.box_width, box_dimensions.box_height, sf::Vector2f(0, 0));
 	}
 
 	void LevelView::updateImages()
@@ -112,7 +112,8 @@ namespace Level
 	}
 
 
-	void LevelView::calculateBoxDimentions()
+
+	void LevelView::calculateBoxDimensions()
 	{
 		if (!game_window) return;
 
@@ -131,24 +132,24 @@ namespace Level
 		int numGaps = numBoxes + 1; 
 
 		//Total space consumed by all gaps
-		float totalSpaceByGaps = box_dimentions.box_spacing_percentage * static_cast<float>(numGaps); 
+		float totalSpaceByGaps = box_dimensions.box_spacing_percentage * static_cast<float>(numGaps); 
 
 		//Total space consumed by boxes and gaps
 		float totalSpace = numBoxes + totalSpaceByGaps;
 		
-		box_dimentions.box_width = screenWidth / (totalSpace);
-		box_dimentions.box_height = box_dimentions.box_width;
+		box_dimensions.box_width = screenWidth / (totalSpace);
+		box_dimensions.box_height = box_dimensions.box_width;
 	}
 
 	void LevelView::calculateBoxSpacing()
 	{
-		box_dimentions.box_spacing = box_dimentions.box_spacing_percentage * box_dimentions.box_width;
+		box_dimensions.box_spacing = box_dimensions.box_spacing_percentage * box_dimensions.box_width;
 	}
 
 	sf::Vector2f LevelView::calculateBoxPosition(int index)
 	{
-		float xPosition = box_dimentions.box_spacing + static_cast<float>(index) * (box_dimentions.box_width + box_dimentions.box_spacing);
-		float yPosition = static_cast<float>(game_window->getSize().y) - box_dimentions.box_height - box_dimentions.bottom_offset;
+		float xPosition = box_dimensions.box_spacing + static_cast<float>(index) * (box_dimensions.box_width + box_dimensions.box_spacing);
+		float yPosition = static_cast<float>(game_window->getSize().y) - box_dimensions.box_height - box_dimensions.bottom_offset;
 		return sf::Vector2f(xPosition, yPosition);
 	}
 

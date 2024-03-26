@@ -24,7 +24,7 @@ namespace Level
 		UI::UIElement::ImageView* obstacle_one_overlay_image;
 		UI::UIElement::ImageView* obstacle_two_overlay_image;
 
-		BoxDimentions box_dimentions;
+		BoxDimensions box_dimensions;
 
 		void createImages();
 		void initializeImages();
@@ -34,7 +34,7 @@ namespace Level
 		void drawBoxValue(sf::Vector2f position, BlockType box_value);
 		void deleteImages();
 
-		void calculateBoxDimentions();
+		void calculateBoxDimensions();
 		sf::Vector2f calculateBoxPosition(int index);
 		void calculateBoxWidthHeight();
 		void calculateBoxSpacing();
@@ -47,8 +47,8 @@ namespace Level
 		void update();
 		void render();
 
-		BoxDimentions getBoxDimentions();
-
+		BoxDimensions getBoxDimensions();
+		
 	};
 }
 

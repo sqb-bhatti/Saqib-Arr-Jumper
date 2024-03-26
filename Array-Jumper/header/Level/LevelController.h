@@ -20,7 +20,7 @@ namespace Level
 		void update();
 		void render();
 
-		BoxDimentions getBoxDimentions();
+		BoxDimensions getBoxDimensions();
 		BlockType getCurrentBoxValue(int currentPosition);
 		bool isLastLevel();
 		void loadNextLevel();
