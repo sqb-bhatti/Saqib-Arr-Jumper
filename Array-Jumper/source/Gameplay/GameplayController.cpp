@@ -23,7 +23,7 @@ namespace Gameplay
 
 		if (isObstacle(value))
 			processObstacle();
-		if (isEndBlock(position))
+		if (isEndBlock(value))
 			processEndBlock();
 	}
 
@@ -39,9 +39,9 @@ namespace Gameplay
 		return false;
 	}
 
-	bool GameplayController::isEndBlock(int position)
+	bool GameplayController::isEndBlock(Level::BlockType value)
 	{
-		if (position == LevelData::NUMBER_OF_BOXES - 1)
+		if (value == BlockType::TARGET)
 			return true;
 		return false;
 	}
