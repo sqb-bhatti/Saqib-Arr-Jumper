@@ -54,7 +54,7 @@ namespace Level
 		return level_model->getCurrentLevelNumber();
 	}
 
-	void LevelController::reset()
+	void LevelController::resetLevels()
 	{
 		level_model->reset();
 	}
