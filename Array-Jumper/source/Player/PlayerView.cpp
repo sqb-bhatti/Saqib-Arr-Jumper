@@ -44,7 +44,7 @@ namespace Player
 
 	void PlayerView::loadPlayer()
 	{
-		CalculatePlayerDimensions();
+		calculatePlayerDimensions();
 		initializePlayerImage();
 	}
 
@@ -57,7 +57,7 @@ namespace Player
 			sf::Vector2f(0, 0));
 	}
 
-	void PlayerView::CalculatePlayerDimensions()
+	void PlayerView::calculatePlayerDimensions()
 	{
 		current_box_dimensions = ServiceLocator::getInstance()->getLevelService()->getBoxDimensions();
 		player_height = current_box_dimensions.box_height;
