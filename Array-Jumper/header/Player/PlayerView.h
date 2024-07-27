@@ -21,7 +21,7 @@ namespace Player
 		void initializePlayerImage();
 		void drawPlayer();
 		void loadPlayer();
-		void CalculatePlayerDimensions();
+		void calculatePlayerDimensions();
 		void updatePlayerPosition();
 		sf::Vector2f calulcatePlayerPosition();
 
