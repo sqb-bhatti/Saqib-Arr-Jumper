@@ -14,6 +14,15 @@
 # EXTERNAL cache entries
 ########################
 
+//Value Computed by CMake
+Array-Jumper_BINARY_DIR:STATIC=/Users/saqibbhatti/Documents/Repos/SFML/Array-Jumper/cmake-build-debug
+
+//Value Computed by CMake
+Array-Jumper_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+Array-Jumper_SOURCE_DIR:STATIC=/Users/saqibbhatti/Documents/Repos/SFML/Array-Jumper
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=CMAKE_ADDR2LINE-NOTFOUND
 

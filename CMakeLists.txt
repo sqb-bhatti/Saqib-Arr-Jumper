@@ -35,7 +35,11 @@ add_executable(Pong main.cpp
         Source/UI/UIElement/TextView.cpp
         Source/UI/UIElement/UIView.cpp
         Source/UI/UIService.cpp
-        Header/UI/Credits/CreditsScreenUIController.h)
+        Header/UI/Credits/CreditsScreenUIController.h
+        Header/Player/PlayerModel.h
+        Source/Player/PlayerModel.cpp
+        Header/Player/PlayerView.h
+        Source/Player/PlayerView.cpp)
 
 #add_executable(Pong ${SOURCE_FILES})
 include_directories(/usr/local/include)
