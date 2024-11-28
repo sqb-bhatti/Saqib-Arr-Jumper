@@ -39,7 +39,11 @@ add_executable(Pong main.cpp
         Header/Player/PlayerModel.h
         Source/Player/PlayerModel.cpp
         Header/Player/PlayerView.h
-        Source/Player/PlayerView.cpp)
+        Source/Player/PlayerView.cpp
+        Header/Player/PlayerController.h
+        Source/Player/PlayerController.cpp
+        Header/Player/PlayerService.h
+        Source/Player/PlayerService.cpp)
 
 #add_executable(Pong ${SOURCE_FILES})
 include_directories(/usr/local/include)

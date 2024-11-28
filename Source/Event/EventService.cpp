@@ -1,9 +1,9 @@
 //
 // Created by Saqib Bhatti on 27/11/24.
 //
-#include "../../header/Event/EventService.h"
-#include "../../header/Global/ServiceLocator.h"
-#include "../../header/Graphics/GraphicService.h"
+#include "../../Header/Event/EventService.h"
+#include "../../Header/Global/ServiceLocator.h"
+#include "../../Header/Graphics/GraphicService.h"
 #include <iostream>
 
 namespace Event

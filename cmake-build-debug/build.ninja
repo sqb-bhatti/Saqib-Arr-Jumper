@@ -182,6 +182,20 @@ build CMakeFiles/Pong.dir/Source/Player/PlayerView.cpp.o: CXX_COMPILER__Pong_uns
   OBJECT_DIR = CMakeFiles/Pong.dir
   OBJECT_FILE_DIR = CMakeFiles/Pong.dir/Source/Player
 
+build CMakeFiles/Pong.dir/Source/Player/PlayerController.cpp.o: CXX_COMPILER__Pong_unscanned_Debug /Users/saqibbhatti/Documents/Repos/SFML/Array-Jumper/Source/Player/PlayerController.cpp || cmake_object_order_depends_target_Pong
+  DEP_FILE = CMakeFiles/Pong.dir/Source/Player/PlayerController.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.4 -fcolor-diagnostics
+  INCLUDES = -I/usr/local/include -isystem /opt/homebrew/include
+  OBJECT_DIR = CMakeFiles/Pong.dir
+  OBJECT_FILE_DIR = CMakeFiles/Pong.dir/Source/Player
+
+build CMakeFiles/Pong.dir/Source/Player/PlayerService.cpp.o: CXX_COMPILER__Pong_unscanned_Debug /Users/saqibbhatti/Documents/Repos/SFML/Array-Jumper/Source/Player/PlayerService.cpp || cmake_object_order_depends_target_Pong
+  DEP_FILE = CMakeFiles/Pong.dir/Source/Player/PlayerService.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.4 -fcolor-diagnostics
+  INCLUDES = -I/usr/local/include -isystem /opt/homebrew/include
+  OBJECT_DIR = CMakeFiles/Pong.dir
+  OBJECT_FILE_DIR = CMakeFiles/Pong.dir/Source/Player
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Pong
@@ -190,7 +204,7 @@ build CMakeFiles/Pong.dir/Source/Player/PlayerView.cpp.o: CXX_COMPILER__Pong_uns
 #############################################
 # Link the executable Pong
 
-build Pong: CXX_EXECUTABLE_LINKER__Pong_Debug CMakeFiles/Pong.dir/main.cpp.o CMakeFiles/Pong.dir/Source/Event/EventService.cpp.o CMakeFiles/Pong.dir/Source/Global/Config.cpp.o CMakeFiles/Pong.dir/Source/Global/ServiceLocator.cpp.o CMakeFiles/Pong.dir/Source/Graphics/GraphicService.cpp.o CMakeFiles/Pong.dir/Source/Main/GameService.cpp.o CMakeFiles/Pong.dir/Source/Sound/SoundService.cpp.o CMakeFiles/Pong.dir/Source/UI/Credits/CreditsScreenUIController.cpp.o CMakeFiles/Pong.dir/Source/UI/Instructions/InstructionsUIController.cpp.o CMakeFiles/Pong.dir/Source/UI/MainMenu/MainMenuUIController.cpp.o CMakeFiles/Pong.dir/Source/UI/SplashScreen/SplashScreenUIController.cpp.o CMakeFiles/Pong.dir/Source/UI/UIElement/AnimatedImageView.cpp.o CMakeFiles/Pong.dir/Source/UI/UIElement/ButtonView.cpp.o CMakeFiles/Pong.dir/Source/UI/UIElement/ImageView.cpp.o CMakeFiles/Pong.dir/Source/UI/UIElement/TextView.cpp.o CMakeFiles/Pong.dir/Source/UI/UIElement/UIView.cpp.o CMakeFiles/Pong.dir/Source/UI/UIService.cpp.o CMakeFiles/Pong.dir/Source/Player/PlayerModel.cpp.o CMakeFiles/Pong.dir/Source/Player/PlayerView.cpp.o | /opt/homebrew/lib/libsfml-graphics.2.6.1.dylib /opt/homebrew/lib/libsfml-audio.2.6.1.dylib /opt/homebrew/lib/libsfml-network.2.6.1.dylib /opt/homebrew/lib/libsfml-window.2.6.1.dylib /opt/homebrew/lib/libsfml-system.2.6.1.dylib
+build Pong: CXX_EXECUTABLE_LINKER__Pong_Debug CMakeFiles/Pong.dir/main.cpp.o CMakeFiles/Pong.dir/Source/Event/EventService.cpp.o CMakeFiles/Pong.dir/Source/Global/Config.cpp.o CMakeFiles/Pong.dir/Source/Global/ServiceLocator.cpp.o CMakeFiles/Pong.dir/Source/Graphics/GraphicService.cpp.o CMakeFiles/Pong.dir/Source/Main/GameService.cpp.o CMakeFiles/Pong.dir/Source/Sound/SoundService.cpp.o CMakeFiles/Pong.dir/Source/UI/Credits/CreditsScreenUIController.cpp.o CMakeFiles/Pong.dir/Source/UI/Instructions/InstructionsUIController.cpp.o CMakeFiles/Pong.dir/Source/UI/MainMenu/MainMenuUIController.cpp.o CMakeFiles/Pong.dir/Source/UI/SplashScreen/SplashScreenUIController.cpp.o CMakeFiles/Pong.dir/Source/UI/UIElement/AnimatedImageView.cpp.o CMakeFiles/Pong.dir/Source/UI/UIElement/ButtonView.cpp.o CMakeFiles/Pong.dir/Source/UI/UIElement/ImageView.cpp.o CMakeFiles/Pong.dir/Source/UI/UIElement/TextView.cpp.o CMakeFiles/Pong.dir/Source/UI/UIElement/UIView.cpp.o CMakeFiles/Pong.dir/Source/UI/UIService.cpp.o CMakeFiles/Pong.dir/Source/Player/PlayerModel.cpp.o CMakeFiles/Pong.dir/Source/Player/PlayerView.cpp.o CMakeFiles/Pong.dir/Source/Player/PlayerController.cpp.o CMakeFiles/Pong.dir/Source/Player/PlayerService.cpp.o | /opt/homebrew/lib/libsfml-graphics.2.6.1.dylib /opt/homebrew/lib/libsfml-audio.2.6.1.dylib /opt/homebrew/lib/libsfml-network.2.6.1.dylib /opt/homebrew/lib/libsfml-window.2.6.1.dylib /opt/homebrew/lib/libsfml-system.2.6.1.dylib
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.4
   LINK_LIBRARIES = -Wl,-rpath,/opt/homebrew/lib  /opt/homebrew/lib/libsfml-graphics.2.6.1.dylib  /opt/homebrew/lib/libsfml-audio.2.6.1.dylib  /opt/homebrew/lib/libsfml-network.2.6.1.dylib  /opt/homebrew/lib/libsfml-window.2.6.1.dylib  /opt/homebrew/lib/libsfml-system.2.6.1.dylib
   OBJECT_DIR = CMakeFiles/Pong.dir

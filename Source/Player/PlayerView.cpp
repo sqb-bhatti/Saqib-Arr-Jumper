@@ -6,6 +6,7 @@
 #include "../../Header/UI/UIElement/ImageView.h"
 #include "../../Header/Global/Config.h"
 #include "../../Header/Global/ServiceLocator.h"
+#include "../../Header/Player/PlayerModel.h"
 
 using namespace UI::UIElement;
 
@@ -15,6 +16,7 @@ namespace Player {
     PlayerView::PlayerView(PlayerController* controller) {
         game_window = nullptr;
         player_image = new ImageView();
+        player_controller = controller;
     }
 
     PlayerView::~PlayerView() {
@@ -31,7 +33,11 @@ namespace Player {
     }
 
     void PlayerView::render() {
-
+       switch(player_controller->getPlayerState()) {
+           case PlayerState::ALIVE:
+               drawPlayer();
+               break;
+       }
     }
 
     void PlayerView::calculatePlayerDimensions() {

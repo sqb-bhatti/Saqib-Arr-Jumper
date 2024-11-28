@@ -6,7 +6,7 @@
 #define PONG_PLAYERVIEW_H
 
 #include "../../Header/UI/UIElement/ImageView.h"
-
+#include "PlayerController.h"
 
 
 namespace Player {
@@ -14,6 +14,7 @@ namespace Player {
     private:
         sf::RenderWindow* game_window;
         UI::UIElement::ImageView* player_image;
+        PlayerController* player_controller;
 
         float player_height;
         float player_width;
@@ -26,7 +27,7 @@ namespace Player {
         sf::Vector2f calulcatePlayerPosition();
 
     public:
-        PlayerView();
+        PlayerView(PlayerController* player_controller);
         ~PlayerView();
         void initialize();
         void update();

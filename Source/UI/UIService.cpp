@@ -1,11 +1,11 @@
 //
 // Created by Saqib Bhatti on 27/11/24.
 //
-#include "../../header/UI/UIService.h"
-#include "../../header/UI/Instructions/InstructionsUIController.h"
-#include "../../header/Main/GameService.h"
-#include "../../header/Global/ServiceLocator.h"
-#include "../../header/UI/UIElement/TextView.h"
+#include "../../Header/UI/UIService.h"
+#include "../../Header/UI/Instructions/InstructionsUIController.h"
+#include "../../Header/Main/GameService.h"
+#include "../../Header/Global/ServiceLocator.h"
+#include "../../Header/UI/UIElement/TextView.h"
 
 
 

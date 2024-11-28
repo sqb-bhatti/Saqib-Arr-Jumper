@@ -8,6 +8,10 @@
 
 namespace Player {
 
+    void Player::PlayerModel::initialize() {
+        /* Not Implemented */
+    }
+
     PlayerState PlayerModel::getPlayerState() {
         return player_state;
     }
