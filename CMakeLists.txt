@@ -43,7 +43,15 @@ add_executable(Pong main.cpp
         Header/Player/PlayerController.h
         Source/Player/PlayerController.cpp
         Header/Player/PlayerService.h
-        Source/Player/PlayerService.cpp)
+        Source/Player/PlayerService.cpp
+        Header/Level/LevelModel.h
+        Header/Level/LevelView.h
+        Header/Level/LevelController.h
+        Source/Level/LevelModel.cpp
+        Source/Level/LevelView.cpp
+        Source/Level/LevelController.cpp
+        Header/Level/LevelService.h
+        Source/Level/LevelService.cpp)
 
 #add_executable(Pong ${SOURCE_FILES})
 include_directories(/usr/local/include)

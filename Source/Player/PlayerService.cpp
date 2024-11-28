@@ -11,8 +11,8 @@ This is the reason you need Player Service. Player also has to communicate with 
  */
 
 
-#include "../../header/Player/PlayerService.h"
-#include "../../header/Player/PlayerController.h"
+#include "../../Header/Player/PlayerService.h"
+#include "../../Header/Player/PlayerController.h"
 
 
 namespace Player {
