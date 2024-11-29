@@ -51,7 +51,9 @@ add_executable(Pong main.cpp
         Source/Level/LevelView.cpp
         Source/Level/LevelController.cpp
         Header/Level/LevelService.h
-        Source/Level/LevelService.cpp)
+        Source/Level/LevelService.cpp
+        Header/Level/BlockType.h
+        Header/Level/LevelData.h)
 
 #add_executable(Pong ${SOURCE_FILES})
 include_directories(/usr/local/include)

@@ -24,6 +24,8 @@ namespace Level {
         void initialize();
         void update();
         void render();
+
+        BlockType getCurrentBoxValue(int currentPosition);
     };
 }
 
