@@ -7,6 +7,7 @@
 
 #include "../../Header/UI/UIElement/ImageView.h"
 #include "PlayerController.h"
+#include "../Level/LevelModel.h"
 
 
 namespace Player {
@@ -15,6 +16,7 @@ namespace Player {
         sf::RenderWindow* game_window;
         UI::UIElement::ImageView* player_image;
         PlayerController* player_controller;
+        Level::BoxDimensions current_box_dimensions;
 
         float player_height;
         float player_width;

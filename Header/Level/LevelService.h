@@ -6,7 +6,7 @@
 #define PONG_LEVELSERVICE_H
 
 
-
+#include "LevelModel.h"
 
 namespace Level {
     class LevelController;
@@ -23,6 +23,8 @@ namespace Level {
         void initialize();
         void update();
         void render();
+
+        BoxDimensions getBoxDimensions();
     };
 }
 

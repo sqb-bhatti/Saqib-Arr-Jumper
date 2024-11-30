@@ -69,7 +69,7 @@ namespace Global
 
         if(GameService::getGameState() == Main::GameState::GAMEPLAY) {
             level_service->render();
-//            player_service->render();
+            player_service->render();
         }
     }
 
@@ -80,6 +80,7 @@ namespace Global
         delete(sound_service);
         delete(ui_service);
         delete(player_service);
+        delete(level_service);
     }
 
     ServiceLocator* ServiceLocator::getInstance()
@@ -97,4 +98,6 @@ namespace Global
     UIService* ServiceLocator::getUIService() { return ui_service; }
 
     PlayerService* ServiceLocator::getPlayerService() { return player_service; }
+
+    LevelService* ServiceLocator::getLevelService() { return level_service; }
 }

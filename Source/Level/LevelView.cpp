@@ -170,6 +170,10 @@ namespace Level {
         return sf::Vector2f(xPosition, yPosition);
     }
 
+    BoxDimensions LevelView::getBoxDimensions() {
+        return box_dimensions;
+    }
+
     UI::UIElement::ImageView* LevelView::getBoxOverlayImage(BlockType block_type) {
         switch (block_type) {
             case BlockType::OBSTACLE_ONE:

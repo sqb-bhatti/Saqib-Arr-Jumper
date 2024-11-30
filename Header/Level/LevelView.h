@@ -52,6 +52,8 @@ namespace Level {
         void drawBox(sf::Vector2f position);
         void drawBoxValue(sf::Vector2f position, BlockType box_value);
         sf::Vector2f calculateBoxPosition(int index);
+
+        BoxDimensions getBoxDimensions();
     };
 }
 
